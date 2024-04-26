@@ -1,0 +1,54 @@
+@import "../variaveis";
+
+
+footer{
+
+  background-color: $cinza-escuro;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+
+  .rodape{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 15px 0;
+
+    .copy{
+
+      display: flex;
+      align-self: center;
+
+      span{
+
+        color: $branco;
+        font-size: $fs18;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@media  screen and (max-width: 768px) {
+
+
+  footer{
+
+    .rodape{
+
+      max-width: 100%;
+
+      .copy{
+
+        span{
+
+          font-size: $fs14;
+        }
+      }
+    }
+  }
+}
