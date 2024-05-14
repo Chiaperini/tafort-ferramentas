@@ -4,36 +4,85 @@
 
 get_header();
 
-$fundo = get_field('imagem') ;
+$banner_img_1 = get_field('banner_img_1') ;
+$banner_img_2 = get_field('banner_img_2') ;
+$banner_img_3 = get_field('banner_img_3') ;
+
+$acesso_img = get_field('capa_do_acesso') ;
+$acesso_titulo = get_field('nome_do_campo') ;
+$acesso_url = get_field('pagina_de_destino') ;
 
 ?>
 
 <div class="home">
 
-    <div class="textos">
+    <div class="banner">
 
-        <div class="conteudo">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 
-            <h2>Precisando desenvolver um projeto?</h2>
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
 
-            <h1>Olá meu nome é Luciel!!</h1>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="<?= $banner_img_1 ?>" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="<?= $banner_img_2 ?>" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="<?= $banner_img_3 ?>" alt="Third slide">
+                </div>
+            </div>
 
-            <h4>Desenvolvedor Web</h4>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
 
-            <p>
-                Bem-vindo ao mundo da inovação digital, onde as possibilidades são tão vastas quanto a imaginação!
-                Se você está à procura de um desenvolvedor web que não apenas compreende a linguagem do código,
-                mas que também respira vida e criatividade nos pixels, você está no lugar certo.
-            </p>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
 
-            <p>
-                Sou Luciel, um apaixonado desenvolvedor web, e minha missão é criar experiências online que transcendem as expectativas.
-                Trabalho incansavelmente para transformar conceitos abstratos em interfaces intuitivas, navegáveis e visualmente deslumbrantes.
-            </p>
+        </div>
 
-            <a href="resumo" class="btn btnSimples">
+    </div>
 
-                Venha conhecer o meu trabalho
+    <div class="acesso-rapido">
+
+        <div class="cabecalho">
+
+            <h1>ACESSO RÁPIDO</h1>
+
+        </div>
+
+        <div class="bloco-acesso">
+
+            <a class="acesso" href="<?= $acesso_url ?>">
+
+                <div class="capa" style="background-image: url(<?= $acesso_img ?>)"></div>
+
+                <h2><?= $acesso_titulo ?></h2>
+
+            </a>
+
+            <a class="acesso" href="<?= $acesso_url ?>">
+
+                <div class="capa" style="background-image: url(<?= $acesso_img ?>)"></div>
+
+                <h2><?= $acesso_titulo ?></h2>
+
+            </a>
+
+            <a class="acesso" href="<?= $acesso_url ?>">
+
+                <div class="capa" style="background-image: url(<?= $acesso_img ?>)"></div>
+
+                <h2><?= $acesso_titulo ?></h2>
 
             </a>
 
@@ -41,10 +90,51 @@ $fundo = get_field('imagem') ;
 
     </div>
 
-    <div class="imagem" style="background-image: url(<?= $fundo ?>)">
+    <div class="bloco-produtos">
 
+        <div class="cabecalho">
+
+            <h1>NOSSOS PRODUTOS</h1>
+
+        </div>
+
+        <ul class="lista-produtos">
+
+            <?php
+            // Get WooCommerce products
+            $args = array(
+                'post_type'      => 'product',
+                'posts_per_page' => 10, // Adjust the number of products per page as needed
+            );
+
+            $loop = new WP_Query($args);
+
+            while ($loop->have_posts()) : $loop->the_post();
+
+                global $product;
+
+                ?>
+
+                <li>
+
+                    <a class="produto" href="<?= the_permalink(); ?>">
+
+                        <img class="thumbnail" src="<?= get_the_post_thumbnail_url() ?>">
+
+                        <h3><?= the_title(); ?></h3>
+
+                    </a>
+
+                </li>
+
+            <?php
+            endwhile;
+            wp_reset_query();
+            ?>
+        </ul>
 
     </div>
+
 
 </div>
 

@@ -1,143 +1,189 @@
 @import "../variaveis";
 
-/**
 header{
 
-  background-color: $azul-escuro;
   width: 100%;
-  display: flex;
+  display: flex !important;
+  flex-direction: column;
   justify-content: center;
-  align-self: flex-start;
-  max-width: 2.5%;
   height: 100%;
-  position: absolute;
-  padding: 10px;
-  z-index: 10;
-  transition: .3s;
+  background-color: $verde;
+  align-items: center;
 
-  .bars-menu{
+  .bloco-superior{
 
-    width: 35px;
-    align-self: flex-start;
-  }
-
-  #iconX{
-
-    display: none;
-  }
-
-  #cabecalho{
-
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
     width: 100%;
-    max-width: 1200px;
-    padding: 15px 0;
-    transition: .4s;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
 
-
-    @media only screen and (max-width: 1024px){
-
-      max-width: 700px;
-
-    }
-
-    @media only screen and (max-width: 800px){
-
-      display: none;
-
-    }
-
-    .menu{
+    .redes-sociais{
 
       display: flex;
-      flex-direction: column;
-      text-align: center;
-      gap: 40px;
+      gap: 20px;
 
-      .menu-item a{
+      .icone{
 
-        text-decoration: none;
-        font-weight: 700;
+        i{
+
+          font-size: $fs18;
+          color: $branco;
+
+        }
+      }
+    }
+
+    .textos{
+
+      display: flex;
+      gap: 10px;
+
+      .divisor{
+
+        width: 2px;
+        background-color: $branco;
+      }
+
+      a{
+
         color: $branco;
-        font-size: $fs20;
-        transition: .1s;
+        font-size: $fs18;
+        font-weight: 700;
+        transition: .3s;
+        padding: 5px 10px;
+        border-radius: 5px;
 
         &:hover{
 
-          font-size: $fs25;
-          font-weight: bold;
+          background-color: $branco;
+          color: $verde;
 
+        }
+      }
+    }
+  }
+
+  .bloco-inferior{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: $branco;
+    align-items: center;
+
+    .zona-blocos{
+
+      width: 100%;
+      max-width: 1024px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .bloco-nav{
+
+        display: flex;
+        gap: 50px;
+
+        .produto-titulo{
+
+          font-size: $fs25;
+          font-weight: 700;
+          color: $verde;
+          transition: .3s;
+          border-bottom:5px solid $branco;
+
+          &:hover{
+
+            border-bottom:5px solid $verde;
+
+          }
 
         }
 
-      }
-    }
+        .produto-titulo[aria-expanded="true"]{
 
+          border-bottom: 5px solid $verde;
+        }
 
-  }
+        .nav-produtos{
 
-}
+          width: 250px;
+          padding: 0;
+          background-color: $verde;
+          border-radius: 0 20px 0 20px;
 
- */
-
-header{
-
-  background-color: $azul-escuro;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  padding: 10px;
-
-  .bloco{
-
-    width: 100%;
-    max-width: 80%;
-    padding: 10px 0;
-
-    .logo{
-
-      img{
-
-      }
-
-      h1{
-
-        font-size: $fs35;
-        color: $branco;
-        font-weight: 600;
-      }
-    }
-
-    .navbar{
-
-
-      .collapse{
-
-        justify-content: space-between;
-
-        .navbar-nav{
-
-          margin: 0 !important;
-          gap: 20px;
-
-          .menu-item{
+          .dropdown-item{
 
             a{
 
-              font-size: $fs20;
+              display: flex;
               color: $branco;
-              font-weight: 400;
-              transition: .3s;
+              font-size: $fs20;
+              font-weight: 700;
+              width: 100%;
+            }
 
-              &:hover{
+            &:hover{
 
-                font-size: $fs22;
-                border-bottom: 1px solid $branco;
+              background-color: $branco;
+
+              a{
+
+                color: $verde;
               }
             }
+
+            &:first-child{
+
+              border-radius: 0 17px 0 0;
+            }
+
+            &:last-child{
+
+              border-radius: 0 0 0 17px ;
+            }
+          }
+        }
+      }
+    }
+
+    .bloco-pesquisa{
+
+      .form-pesquisa{
+
+        border: 1px solid $cinza;
+        border-radius: 25px;
+        display: flex;
+        padding: 10px 0;
+
+        input{
+
+          width: 85%;
+          padding: 0 25px;
+          border-radius: 25px;
+          border: none;
+
+          &:focus-visible{
+
+            outline: none;
+          }
+        }
+
+        button{
+
+          border: none;
+          background-color: transparent;
+
+          &:focus-visible, &:focus{
+
+            outline: none;
+          }
+
+          i{
+
+            font-size: $fs20;
           }
         }
       }

@@ -1,57 +1,22 @@
 <?php
-/* template name: Portfólio */
+/* Template Name: Portfólio */
 get_header();
 
 $fundo = get_field('imagem');
-
 ?>
 
-<div class="portfolio">
+<div class="index-page">
 
-    <div class="cabecalho">
+    <div class="bloco-resultados">
 
-        <h1>Seja bem-vindo ao meu Portfólio</h1>
-
-        <span>Aqui você encontra mais do que simples projetos, você encontra soluções que buscam facilitar o desenvolvimento de suas ideias, ultrapassando o limite da conectividade.</span>
-
-    </div>
-
-    <div class="bloco_projetos">
-
-        <div class="tabs_projetos">
-
-            <nav class="nav nav-pills nav-fill">
-
-                <?php
-                $tags = get_tags();
-
-                if ($tags) {
-                    foreach ($tags as $tag) { ?>
-
-                        <a class="nav-link" aria-current="page" href="?tags=<?= $tag->name ?>" > <?= $tag->name ?></a>
-
-                    <?php }
-                } else {
-                    echo 'Nenhuma caracterisca encontrada.';
-                }
-                ?>
-
-            </nav>
-
-            <form role="search" class="pesquisa" method="get" id="searchform" action="<?php echo home_url('/portfolio/'); ?>">
-                <input type="text" value="" name="s" id="s" placeholder="Pesquise pelo nome ou tecnologia que deseja encontrar o projeto">
-                <input type="submit" id="searchsubmit" value="Buscar">
-            </form>
-
-        </div>
-
-        <ul class="lista_projetos">
+        <ul class="lista-resultados">
 
             <?php
             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
             $args = array(
-                'post_type' => 'projeto',
-                'posts_per_page' => 2, // Display 10 projects per page
+                'post_type' => 'product',
+                'posts_per_page' => -1, // Display all projects
                 'paged' => $paged,
                 'tax_query' => array(),
             );
@@ -60,50 +25,20 @@ $fundo = get_field('imagem');
                 $args['s'] = sanitize_text_field($_GET['s']);
             }
 
-            if (isset($_GET['tags']) && !empty($_GET['tags'])) {
-                $args['tax_query'][] = array(
-                    'taxonomy' => 'post_tag',
-                    'field' => 'slug',
-                    'terms' => sanitize_text_field($_GET['tags']),
-                );
-            }
-
             $query = new WP_Query($args);
 
             if ($query->have_posts()) :
                 while ($query->have_posts()) : $query->the_post(); ?>
 
-                    <li class="projeto">
+                    <li class="resultado">
 
-                        <div class="conteudo">
-                            <img src="<?= get_the_post_thumbnail_url(); ?> ">
-                        </div>
+                        <a href="<?php the_permalink(); ?>">
 
-                        <div class="acoes">
-                            <h2 class="nomeProjeto"><?= the_title(); ?></h2>
+                            <img class="thumbnail" src="<?php echo get_the_post_thumbnail_url(); ?> ">
 
-                            <div class="blocoTags">
-                                <h3>Tecnologias Utilizadas</h3>
-                                <ul class="tags">
+                            <h2 class="nome-resultado"><?php the_title(); ?></h2>
 
-                                    <?php
-                                    $posttags = get_the_tags();
-                                    if ($posttags) {
-                                        foreach ($posttags as $tag) { ?>
-                                            <li class="tag"> <?= $tag->name ?> </li>
-                                        <?php }
-                                    }
-                                    ?>
-
-                                </ul>
-                            </div>
-
-                            <div class="botoes">
-                                <a href="<?= get_permalink() ?>">Ler Mais</a>
-                                <a href="<?= get_field('url_projeto'); ?>" target="_blank">Demo Projeto</a>
-                            </div>
-
-                        </div>
+                        </a>
 
                     </li>
                 <?php
@@ -136,7 +71,6 @@ $fundo = get_field('imagem');
         ?>
 
     </div>
-
 
 </div>
 
