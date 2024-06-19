@@ -1,0 +1,62 @@
+@import "../variaveis";
+
+.index-page{
+
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  .bloco-resultados{
+
+    display: flex;
+    width: 70%;
+    justify-content: center;
+
+    .lista-resultados{
+
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 40px 7.1%;
+
+      .resultado{
+
+        display: flex;
+        width: 250px;
+        height: 250px;
+
+        a{
+
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 250px;
+          height: 250px;
+          justify-content: space-between;
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+          transition: .3s;
+
+          .thumbnail{
+
+            width: 200px;
+          }
+
+          .nome-resultado{
+
+            color: $preto;
+            font-size: $fs14;
+            font-weight: 600;
+            text-align: center;
+            padding: 10px 5px;
+
+          }
+
+          &:hover{
+
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+}

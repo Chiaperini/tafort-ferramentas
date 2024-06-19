@@ -1,0 +1,192 @@
+@import "../variaveis";
+
+header{
+
+  width: 100%;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  background-color: $verde;
+  align-items: center;
+
+  .bloco-superior{
+
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+
+    .redes-sociais{
+
+      display: flex;
+      gap: 20px;
+
+      .icone{
+
+        i{
+
+          font-size: $fs18;
+          color: $branco;
+
+        }
+      }
+    }
+
+    .textos{
+
+      display: flex;
+      gap: 10px;
+
+      .divisor{
+
+        width: 2px;
+        background-color: $branco;
+      }
+
+      a{
+
+        color: $branco;
+        font-size: $fs18;
+        font-weight: 700;
+        transition: .3s;
+        padding: 5px 10px;
+        border-radius: 5px;
+
+        &:hover{
+
+          background-color: $branco;
+          color: $verde;
+
+        }
+      }
+    }
+  }
+
+  .bloco-inferior{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: $branco;
+    align-items: center;
+
+    .zona-blocos{
+
+      width: 100%;
+      max-width: 1024px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .bloco-nav{
+
+        display: flex;
+        gap: 50px;
+
+        .produto-titulo{
+
+          font-size: $fs25;
+          font-weight: 700;
+          color: $verde;
+          transition: .3s;
+          border-bottom:5px solid $branco;
+
+          &:hover{
+
+            border-bottom:5px solid $verde;
+
+          }
+
+        }
+
+        .produto-titulo[aria-expanded="true"]{
+
+          border-bottom: 5px solid $verde;
+        }
+
+        .nav-produtos{
+
+          width: 250px;
+          padding: 0;
+          background-color: $verde;
+          border-radius: 0 20px 0 20px;
+
+          .dropdown-item{
+
+            a{
+
+              display: flex;
+              color: $branco;
+              font-size: $fs20;
+              font-weight: 700;
+              width: 100%;
+            }
+
+            &:hover{
+
+              background-color: $branco;
+
+              a{
+
+                color: $verde;
+              }
+            }
+
+            &:first-child{
+
+              border-radius: 0 17px 0 0;
+            }
+
+            &:last-child{
+
+              border-radius: 0 0 0 17px ;
+            }
+          }
+        }
+      }
+    }
+
+    .bloco-pesquisa{
+
+      .form-pesquisa{
+
+        border: 1px solid $cinza;
+        border-radius: 25px;
+        display: flex;
+        padding: 10px 0;
+
+        input{
+
+          width: 85%;
+          padding: 0 25px;
+          border-radius: 25px;
+          border: none;
+
+          &:focus-visible{
+
+            outline: none;
+          }
+        }
+
+        button{
+
+          border: none;
+          background-color: transparent;
+
+          &:focus-visible, &:focus{
+
+            outline: none;
+          }
+
+          i{
+
+            font-size: $fs20;
+          }
+        }
+      }
+    }
+  }
+}

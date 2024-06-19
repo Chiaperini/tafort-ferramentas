@@ -12,10 +12,15 @@ footer{
   .blocos{
 
     display: flex;
+    align-self: center;
     justify-content: space-between;
+    width: 100%;
+    max-width: 1024px;
 
     .bloco{
 
+      width: 25%;
+      height: 100%;
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -27,28 +32,43 @@ footer{
           width: 250px;
         }
       }
+      
+      .paginas{
 
-      .dropdown-item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 5%;
+        padding-top: 20px;
 
-        a{
+ 
+
+        .dropdown-item {
+
+          width: auto;
+          text-align: center;
+
+          a{
 
           color: $branco;
-          font-size: $fs12;
+          font-size: $fs14;
           font-weight: 700;
           transition: .3s;
-        }
+          }
 
-        &:hover{
+          &:hover{
 
-          border-bottom: 1px solid $branco;
-          background-color: transparent;
+            border-bottom: 1px solid $branco;
+            background-color: transparent;
+          }
         }
-      }
+      }  
 
       .redes-sociais{
 
         display: flex;
         gap: 20px;
+        padding-left: 20px;
 
         .icon{
 
@@ -72,12 +92,12 @@ footer{
         display: flex;
         flex-direction: column;
         gap: 20px;
+        padding-left: 20px;
 
         .contato{
 
           display: flex;
           transition: .3s;
-          justify-content: space-between;
           gap: 20px;
 
           img{
@@ -101,6 +121,7 @@ footer{
       }
 
     }
+
   }
 
   .rodape{
@@ -127,22 +148,139 @@ footer{
   }
 }
 
-@media  screen and (max-width: 768px) {
+@media  screen and (max-width: 770px) {
 
 
   footer{
 
+    background-color: $verde;
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
+    bottom: 0;
+  
+    .blocos{
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px 0;
+
+      .bloco{
+  
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 80%;
+        align-items: center;
+  
+        .logo{
+  
+          .logoArea{
+  
+            width: 150px;
+            padding-left: 20px;
+          }
+        }
+  
+        .paginas{
+
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: center;
+          justify-content: space-between;
+
+          .dropdown-item {
+
+            width: 33%;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+
+            a{  
+  
+              color: $branco;
+              font-size: $fs18;
+              font-weight: 700;
+              transition: .3s;
+            }
+  
+           &:hover{
+  
+              border-bottom: 1px solid $branco;
+              background-color: transparent;
+            }
+          }
+        }
+
+        .redes-sociais{
+
+          display: flex;
+          padding-left: 0;
+        }
+  
+        .contatos{
+  
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          padding-left: 0;
+  
+          .contato{
+  
+            display: flex;
+            transition: .3s;
+            justify-content: center;
+            gap: 20px;
+  
+            img{
+  
+              width: auto;
+              height: 20px;
+            }
+  
+            p{
+  
+              color: $branco;
+              font-size: $fs14;
+              font-weight: 700;
+            }
+  
+            &:hover{
+  
+              transform: scale(1.05);
+            }
+          }
+        }
+  
+      }
+
+
+    }
+  
     .rodape{
-
-      max-width: 100%;
-
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+      padding: 15px 0;
+      gap: 30px;
+  
       .copy{
-
+  
+        display: flex;
+        align-self: center;
+  
         span{
-
-          font-size: $fs14;
+  
+          color: $branco;
+          font-size: $fs18;
+          font-weight: 600;
         }
       }
     }
   }
+
 }

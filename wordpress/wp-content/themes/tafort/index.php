@@ -3,9 +3,14 @@
 get_header();
 
 $fundo = get_field('imagem');
+$pesquisa = $_GET['s']
 ?>
 
 <div class="index-page">
+
+	<div class="page-name">
+         <h4> Exibindo</h4><h4 style="color: #217247; padding-left: 10px; text-transform: capitalize; font-weight: bold; " ><?= $pesquisa ?></h4>
+	</div>  
 
     <div class="bloco-resultados">
 
@@ -45,7 +50,7 @@ $fundo = get_field('imagem');
                 endwhile;
                 wp_reset_postdata();
             else :
-                echo 'Nenhum projeto encontrado.';
+                echo 'Nenhum resultado encontrado.';
             endif;
             ?>
 

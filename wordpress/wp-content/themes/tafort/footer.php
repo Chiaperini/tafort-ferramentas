@@ -21,7 +21,7 @@
                 <?php
                 wp_nav_menu(
                     array(
-                        'theme_location' => 'menu-principal',
+                        'theme_location' => 'menu-footer',
                         'container'      => 'ul',
                         'container_class'=> 'collapse navbar-collapse',
                         'container_id'   => 'navbarTogglerDemo01',
@@ -69,6 +69,8 @@
     </div>
 
 </footer>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,124 @@
+@import "../variaveis";
+
+.fale-conosco{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 425px;
+    gap: 30px;
+    
+
+    .cabecario{
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .titulo{
+
+            font-size: $fs24;
+            font-weight: bold;
+            color: $vermelho;
+            text-align: center;
+        }
+
+        .aviso{
+            text-align: center;
+        }
+
+        .linha{
+
+            width: 100%;
+            height: 2px;
+            background-color: $vermelho;
+        }
+    }
+
+    .bloco-formulario{
+        
+        width: 100%;
+
+        .wpcf7{
+            
+            form{
+
+                display: flex;
+                flex-direction: column;
+                place-items:  center;
+                background-color: $cinza-mtClaro;
+                width: 100%;
+                padding: 10px;
+                border-radius: 10px;
+                gap: 20px;
+            
+                p{
+            
+                    width: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+            
+                    label{
+            
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+            
+                        span{
+
+                            align-self: center;
+            
+                            input{
+            
+                                border-radius: 10px;
+                                border: none;
+                                box-shadow: 0px 0px 38px -21px rgba(0,0,0,0.75);
+                                padding-left: 15px;
+                            }
+
+                            textarea{
+
+                                border-radius: 10px;
+                                border: none;
+                                box-shadow: 0px 0px 38px -21px rgba(0,0,0,0.75);
+                                padding: 10px 0 0 15px;
+                                
+                            }
+                        }
+            
+            
+                    }
+            
+                    .has-spinner{
+            
+                        width: 80%;
+                        color: $verde;
+                        background-color: $branco;
+                        font-size: $fs16;
+                        border-radius: 20px;
+                        font-weight: bold;
+                        border: 1px solid $verde;
+                        cursor: pointer;
+            
+            
+                        &:hover{
+            
+                            color: $branco;
+                            background-color: $verde;
+                        }
+                    }
+                }
+            
+            }
+        }
+        
+    }
+
+
+}
+
+
+
+

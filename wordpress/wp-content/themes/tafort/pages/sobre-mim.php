@@ -7,84 +7,48 @@ get_header();
 ?>
 
     <div class="sobre-mim">
+        
+        <div class="cabecario">
+            <h1>Conheça nossa Empresa</h1>
+            <p>A Tafort está presente no mercado de ferramentas visando sempre garantir a satisfação do cliente.</p>
+        </div>
 
+        <img src="https://techto.com.br/wp-content/uploads/2022/09/261146064_1310637392730225_8620326454232869659_n.webp" alt="">
+        
         <div class="textos">
-
             <div class="conteudo">
 
-                <h1><?= the_title()?></h1>
+                <h2 class="alto">Missão</h2>
 
-                <h2>Olá meu nome é Luciel, sou Desenvolvedor Web e espero desenvolver seu próximo projeto</h2>
-
-                <p>
-                    Bem-vindo a um universo de possibilidades digitais, onde a inovação é a linguagem e a imaginação é o ponto de partida!
-                    Se você está em busca de um desenvolvedor web que vai além do código, que transforma linhas de programação em experiências envolventes, você está prestes a descobrir algo extraordinário.
-                    Eu sou Luciel, mais do que um desenvolvedor, sou um apaixonado por dar vida aos pixels e criar digitalmente o inimaginável.
-                    Aqui, cada projeto é mais do que códigos e pixels alinhados.
-                    É uma jornada para transcender expectativas, transformar ideias abstratas em interfaces intuitivas, navegáveis e visualmente deslumbrantes. Meu compromisso é levar a sua visão além do convencional, mergulhando de cabeça na criatividade para construir experiências online que contam histórias.
-                    Convido você a explorar meus projetos e testemunhar a magia que acontece quando a tecnologia se encontra com a paixão. Juntos, podemos criar algo verdadeiramente notável.
-                    Seja bem-vindo ao futuro digital, onde seus sonhos online se tornam realidade!
+                <p class="texto">
+                    Sempre em busca do aperfeiçoamento contínuo, sistêmico e progressivo da qualidade de nossos produtos e serviços que superem as expectativas de nossos clientes, fornecedores e colaboradores.
                 </p>
 
-                <a href="resumo" class="btn btnSimples">
+            </div>
+            <div class="conteudo">
 
-                    Venha conhecer o meu trabalho
+                <h2 class="alto">Visão</h2>
 
-                </a>
+                <p class="texto">
+                    Ser uma das principais empresas brasileiras do segmento de máquinas e ferramentas de uso doméstico e industrial fornecendo, produtos e serviços reconhecidos pela qualidade, confiabilidade e comprometimento com seus clientes.
+                </p>
 
             </div>
+            <div class="conteudo">
 
-        </div>
+                <h2 class="alto">Valores</h2>
 
-        <div class="conteudo">
-
-            <ul class="dados">
-
-                <li class="dado">
-
-                    <span class="value">4 +</span>
-
-                    <span class="label">anos de experiência</span>
-
-                </li>
-
-                <li class="dado">
-
-                    <span class="value">15</span>
-
-                    <span class="label">projetos concluídos</span>
-                    
-                </li>
-
-                <li class="dado">
-
-                    <span class="value"></span>
-
-                    <span class="label"></span>
-
-
-                </li>
-
-                <li class="dado">
-
-                    <span class="value"></span>
-
-                    <span class="label"></span>
-
-
-                </li>
-
-            </ul>
-
-            <div class="faco">
+                <ul class="valores">
+                    <li>Lideranças Interativas</li>
+                    <li>Trabalho em Equipe</li>
+                    <li>Proatividade</li>
+                    <li>Qualidade</li>
+                    <li>Ética e Respeito</li>
+                </ul>
 
             </div>
-
-            
-
         </div>
-
-
+    
     </div>
 
 <?php get_footer(); ?>
