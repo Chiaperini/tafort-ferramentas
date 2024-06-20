@@ -1,14 +1,20 @@
 <?php
 
-/* template name: Sobre mim */
+/* template name: Sobre Nós */
 
 get_header();
 
 ?>
 
+<!-- Correções:
+
+ Puxar a Imagem utilizando o ACF Custom Fields
+
+ -->
+
     <div class="sobre-mim">
         
-        <div class="cabecario">
+        <div class="cabecalho">
             <h1>Conheça nossa Empresa</h1>
             <p>A Tafort está presente no mercado de ferramentas visando sempre garantir a satisfação do cliente.</p>
         </div>

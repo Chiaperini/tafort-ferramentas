@@ -6,6 +6,17 @@ $fundo = get_field('imagem');
 $pesquisa = $_GET['s']
 ?>
 
+
+<!--
+
+Correções:
+
+Não colocar estilos no HTML
+
+<h4> Exibindo</h4><h4 style="color: #217247; padding-left: 10px; text-transform: capitalize; font-weight: bold; " ><?= $pesquisa ?></h4>
+
+-->
+
 <div class="index-page">
 
 	<div class="page-name">
@@ -37,11 +48,11 @@ $pesquisa = $_GET['s']
 
                     <li class="resultado">
 
-                        <a href="<?php the_permalink(); ?>">
+                        <a href="<?= the_permalink(); ?>">
 
-                            <img class="thumbnail" src="<?php echo get_the_post_thumbnail_url(); ?> ">
+                            <img class="thumbnail" src="<?= get_the_post_thumbnail_url(); ?> ">
 
-                            <h2 class="nome-resultado"><?php the_title(); ?></h2>
+                            <h2 class="nome-resultado"><?= the_title(); ?></h2>
 
                         </a>
 

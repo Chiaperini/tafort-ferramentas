@@ -20,22 +20,45 @@ if ($tipoPost == 'product') {
 
     <div class="produto">
 
-
         <div class="exposicao">
+
             <div class="imagens">
-                <img class="img-principal" src="<?= esc_url($imagemDestaque) ?>" id="img-principal">
+
+                <!--
+
+                Correções: Desnecessário uso de esc_url
+
+                <img class="img-principal" src="<= esc_url($imagemDestaque) ?>" id="img-principal">
+
+                <img class="img" src="<= esc_url($original_image_url) ?>" onclick="changeMainImage('<= esc_url($original_image_url) ?>')">
+
+                <h1><= esc_html($tituloPost) ?></h1>
+
+                <span class="descricao-curta"><= esc_html($shortDescription) ?></span>
+
+                OBS: APAGAR TODOS OS ESC_URL E ESC_HTML
+
+                -->
+
+                <img class="img-principal" src="<?= $imagemDestaque ?>" id="img-principal">
+
                 <div class="galeria">
-                    <?php foreach ($attachment_ids as $attachment_id) : 
-                            $original_image_url = wp_get_attachment_url($attachment_id); ?>
-                        <img class="img" src="<?= esc_url($original_image_url) ?>" onclick="changeMainImage('<?= esc_url($original_image_url) ?>')">
+
+                    <?php
+                    foreach ($attachment_ids as $attachment_id) :
+                            $original_image_url = wp_get_attachment_url($attachment_id);
+                    ?>
+                        <img class="img" src="<?= $original_image_url ?>" onclick="changeMainImage('<?= esc_url($original_image_url) ?>')">
                     <?php endforeach; ?>
+
                 </div>
+
             </div>
 
             <div class="textos-principais">
-                <h1><?= esc_html($tituloPost) ?></h1>
+                <h1><?= $tituloPost ?></h1>
                 <hr>
-                <span class="descricao-curta"><?= esc_html($shortDescription) ?></span>
+                <span class="descricao-curta"><?= $shortDescription ?></span>
 
                 <div class="dados">
                     <h4>Categorias:</h4>
@@ -48,7 +71,7 @@ if ($tipoPost == 'product') {
             <h2 class="titulo-destaque">CARACTERÍSTICAS DO PRODUTO</h2>
             <div class="conteudo">
                 <h3>Descrição</h3>
-                <?= wp_kses_post($conteudo) ?>
+                <?= $shortDescription ?>
             </div>
         </div>
 
@@ -89,21 +112,36 @@ if ($tipoPost == 'product') {
     </div>
 
     <div class="postPage">
+
         <div class="container">
+
             <div class="singlePost">
+
                 <img src="<?= esc_url(get_the_post_thumbnail_url()) ?>">
+
                 <div class="textos">
+
                     <span class="category"><?= the_category(', ') ?></span>
+
                     <div class="dataTag">
+
                         <span class="data fa fa-calendar"><?= esc_html($dataPost) ?></span>
                         <span class="tag fa fa-tag"><?= get_the_tag_list('', ', ') ?></span>
+                        
                     </div>
+
                     <h1 class="title"><?= esc_html($tituloPost) ?></h1>
+
                     <span class="autor">Autor: <?= esc_html($autorNome) ?></span>
+
                     <div class="conteudo"><?= wp_kses_post($conteudo) ?></div>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
 
 <?php } ?>

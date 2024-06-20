@@ -18,6 +18,7 @@ $acesso_titulo3 = get_field('titulo_3');
 $acesso_url1 = get_field('url_acesso_1');
 $acesso_url2 = get_field('url_acesso_2');
 $acesso_url3 = get_field('url_acesso_3');
+
 ?>
 
 <div class="home">
@@ -100,8 +101,10 @@ $acesso_url3 = get_field('url_acesso_3');
 
         <!--
 
-        Correção: Simplificar códigos de busca de produtos, possuem código desnecessários,
-        e de dificil manutenção.
+        Correções:
+
+         Simplificar códigos de busca de produtos, possuem código desnecessários,
+         e de dificil manutenção.
 
         <div id="carouselProducts" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -170,6 +173,8 @@ $acesso_url3 = get_field('url_acesso_3');
 
         -->
 
+        <button class="btn-prox"> < </button>
+
         <ul class="slide-produtos">
             <?php
             $args = array(
@@ -195,7 +200,6 @@ $acesso_url3 = get_field('url_acesso_3');
             <?php endwhile; wp_reset_query(); ?>
         </ul>
 
-        <button class="btn-prox"> < </button>
         <button class="btn-ant"> > </button>
 
         <script type="text/javascript">

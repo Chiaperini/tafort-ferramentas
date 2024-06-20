@@ -8,7 +8,7 @@ get_header();
 
 <div class="fale-conosco">
 
-    <div class="cabecario">
+    <div class="cabecalho">
         <h1 class="titulo">Fale Conosco</h1>
         <p class="aviso">Preencha todos os campos.</p>
         <div class="linha"></div>
@@ -18,7 +18,7 @@ get_header();
 
         <!--
 
-        Correção: Colocar o Shortcode para ser trocado pela página de fale-conosco no Wordpress
+        Correções: Colocar o Shortcode para ser trocado pela página de fale-conosco no Wordpress
 
         Código Antigo
 

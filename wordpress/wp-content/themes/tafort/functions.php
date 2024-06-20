@@ -28,20 +28,6 @@ function wmpudev_enqueue_icon_stylesheet()
 
 add_action('wp_enqueue_scripts', 'wmpudev_enqueue_icon_stylesheet');
 
-function enqueue_slick_carousel() {
-    // jQuery
-    wp_enqueue_script('jquery');
-
-    // CSS
-    wp_enqueue_style('slick-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
-    wp_enqueue_style('slick-theme-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
-
-    // JS
-    wp_enqueue_script('slick-js', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), null, true);
-    wp_enqueue_script('slick-init', get_template_directory_uri() . '/js/slick-init.js', array('jquery', 'slick-js'), null, true);
-}
-add_action('wp_enqueue_scripts', 'enqueue_slick_carousel');
-
 class Bootstrap_Nav_Walker extends Walker_Nav_Menu {
     public function start_lvl(&$output, $depth = 0, $args = null) {
         $indent = str_repeat("\t", $depth);
