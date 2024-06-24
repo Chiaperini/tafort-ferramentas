@@ -4,13 +4,9 @@
 
 get_header();
 
+$imagemsobre1 = get_field('imagemsobre1');
+
 ?>
-
-<!-- Correções:
-
- Puxar a Imagem utilizando o ACF Custom Fields
-
- -->
 
     <div class="sobre-mim">
         
@@ -19,7 +15,7 @@ get_header();
             <p>A Tafort está presente no mercado de ferramentas visando sempre garantir a satisfação do cliente.</p>
         </div>
 
-        <img src="https://techto.com.br/wp-content/uploads/2022/09/261146064_1310637392730225_8620326454232869659_n.webp" alt="">
+        <img src="<?= $imagemsobre1 ?>" alt="first img">
         
         <div class="textos">
             <div class="conteudo">

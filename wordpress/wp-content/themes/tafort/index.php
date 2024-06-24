@@ -7,20 +7,12 @@ $pesquisa = $_GET['s']
 ?>
 
 
-<!--
 
-Correções:
-
-Não colocar estilos no HTML
-
-<h4> Exibindo</h4><h4 style="color: #217247; padding-left: 10px; text-transform: capitalize; font-weight: bold; " ><?= $pesquisa ?></h4>
-
--->
 
 <div class="index-page">
 
 	<div class="page-name">
-         <h4> Exibindo</h4><h4 style="color: #217247; padding-left: 10px; text-transform: capitalize; font-weight: bold; " ><?= $pesquisa ?></h4>
+         <h4> Exibindo</h4><h4 class="h4-verde"><?= $pesquisa ?></h4>
 	</div>  
 
     <div class="bloco-resultados">

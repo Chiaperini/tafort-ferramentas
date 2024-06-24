@@ -16,24 +16,6 @@ get_header();
 
     <div class="bloco-formulario">
 
-        <!--
-
-        Correções: Colocar o Shortcode para ser trocado pela página de fale-conosco no Wordpress
-
-        Código Antigo
-
-        <php echo do_shortcode('[contact-form-7 id="411727c" title="Contact form 1"]'); ?>
-
-        -->
-
-        <!--
-
-        Código Novo
-
-         Colocar o Shortcode diretamente ná página.
-
-         -->
-
         <?= the_content() ?>
 
     </div>

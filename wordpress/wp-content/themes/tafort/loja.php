@@ -20,16 +20,16 @@ $fundo = get_field('imagem') ;
 					<?php echo do_shortcode('[br_filter_single filter_id=981]'); ?>
 				</div>
 				<div class="filtro">
-					<?php echo do_shortcode('[br_filter_single filter_id=105]'); ?>
+					<?php echo do_shortcode('[br_filter_single filter_id=1457]'); ?>
 				</div>
 				<div class="filtro">
-					<?php echo do_shortcode('[br_filter_single filter_id=179]'); ?>
+					<?php echo do_shortcode('[br_filter_single filter_id=1456]'); ?>
 				</div>
                 <div class="filtro">
-					<?php echo do_shortcode('[br_filter_single filter_id=895]'); ?>
+					<?php echo do_shortcode('[br_filter_single filter_id=1455]'); ?>
 				</div>
 				<div class="filtro">
-					<?php echo do_shortcode('[br_filter_single filter_id=896]'); ?>
+					<?php echo do_shortcode('[br_filter_single filter_id=1454]'); ?>
 				</div>
 				
 			</div>

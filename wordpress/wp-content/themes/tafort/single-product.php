@@ -10,6 +10,7 @@ $imagemDestaque = get_the_post_thumbnail_url();
 $tipoPost = get_post_type();
 $shortDescription = get_the_excerpt();
 
+
 if ($tipoPost == 'product') {
 
     $product = wc_get_product($idPost);
@@ -24,22 +25,6 @@ if ($tipoPost == 'product') {
 
             <div class="imagens">
 
-                <!--
-
-                Correções: Desnecessário uso de esc_url
-
-                <img class="img-principal" src="<= esc_url($imagemDestaque) ?>" id="img-principal">
-
-                <img class="img" src="<= esc_url($original_image_url) ?>" onclick="changeMainImage('<= esc_url($original_image_url) ?>')">
-
-                <h1><= esc_html($tituloPost) ?></h1>
-
-                <span class="descricao-curta"><= esc_html($shortDescription) ?></span>
-
-                OBS: APAGAR TODOS OS ESC_URL E ESC_HTML
-
-                -->
-
                 <img class="img-principal" src="<?= $imagemDestaque ?>" id="img-principal">
 
                 <div class="galeria">
@@ -48,7 +33,7 @@ if ($tipoPost == 'product') {
                     foreach ($attachment_ids as $attachment_id) :
                             $original_image_url = wp_get_attachment_url($attachment_id);
                     ?>
-                        <img class="img" src="<?= $original_image_url ?>" onclick="changeMainImage('<?= esc_url($original_image_url) ?>')">
+                        <img class="img" src="<?= $original_image_url ?>" onclick="changeMainImage('<?= $original_image_url ?>')">
                     <?php endforeach; ?>
 
                 </div>
@@ -71,7 +56,7 @@ if ($tipoPost == 'product') {
             <h2 class="titulo-destaque">CARACTERÍSTICAS DO PRODUTO</h2>
             <div class="conteudo">
                 <h3>Descrição</h3>
-                <?= $shortDescription ?>
+                <?= $conteudo ?> 
             </div>
         </div>
 
@@ -84,9 +69,9 @@ if ($tipoPost == 'product') {
                     $related_product = wc_get_product($related_product_id);
                     ?>
                     <div class="produto-relacionado">
-                        <a href="<?= esc_url(get_permalink($related_product_id)) ?>">
+                        <a href="<?= get_permalink($related_product_id) ?>">
                             <?= $related_product->get_image('thumbnail') ?>
-                            <h3><?= esc_html($related_product->get_name()) ?></h3>
+                            <h3><?= $related_product->get_name() ?></h3>
                         </a>
                     </div>
                 <?php } ?>
@@ -103,10 +88,10 @@ if ($tipoPost == 'product') {
 
 <?php } else { ?>
 
-    <div class="featuredImage" style="background-image: url('<?= esc_url($imagemDestaque) ?>')">
+    <div class="featuredImage" style="background-image: url('<?= $imagemDestaque ?>')">
         <div class="destaque">
             <div class="texto">
-                <h1><?= is_front_page() ? esc_html($tituloPost) : '' ?></h1>
+                <h1><?= is_front_page() ? $tituloPost : '' ?></h1>
             </div>
         </div>
     </div>
@@ -117,7 +102,7 @@ if ($tipoPost == 'product') {
 
             <div class="singlePost">
 
-                <img src="<?= esc_url(get_the_post_thumbnail_url()) ?>">
+                <img src="<?= $imagemDestaque ?>">
 
                 <div class="textos">
 
@@ -125,14 +110,14 @@ if ($tipoPost == 'product') {
 
                     <div class="dataTag">
 
-                        <span class="data fa fa-calendar"><?= esc_html($dataPost) ?></span>
+                        <span class="data fa fa-calendar"><?= $dataPost ?></span>
                         <span class="tag fa fa-tag"><?= get_the_tag_list('', ', ') ?></span>
                         
                     </div>
 
-                    <h1 class="title"><?= esc_html($tituloPost) ?></h1>
+                    <h1 class="title"><?= $tituloPost ?></h1>
 
-                    <span class="autor">Autor: <?= esc_html($autorNome) ?></span>
+                    <span class="autor">Autor: <?= $autorNome ?></span>
 
                     <div class="conteudo"><?= wp_kses_post($conteudo) ?></div>
 
