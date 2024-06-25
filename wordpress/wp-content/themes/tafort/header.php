@@ -170,11 +170,11 @@ if (isset($_GET['s']) && !empty($_GET['s'])) {
 
         </ul>
 
-        <div class="textos">
+        <!--div class="textos">
 
             <a href="tel:163954942000"><img src="https://techto.com.br/wp-content/uploads/2019/02/LOGOTIPO-BRANCA-T.webp"> Televendas: (16) 3954-9420 </a>
 
-        </div>
+        </div-->
 
     </div>
 

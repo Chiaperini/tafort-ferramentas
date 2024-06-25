@@ -2,8 +2,6 @@
 
 get_header();
 
-/* template name: Categorias */
-
  $categoria = str_replace("-", " ", get_page_uri());
 
 ?>
