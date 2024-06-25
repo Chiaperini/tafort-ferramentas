@@ -40,6 +40,7 @@ if (isset($_GET['s']) && !empty($_GET['s'])) {
 
 ?>
 
+<!--
 <header>
 
     <div class="bloco-superior">
@@ -151,7 +152,88 @@ if (isset($_GET['s']) && !empty($_GET['s'])) {
     </div>
 
 </header>
+-->
+
+<header>
+
+    <div class="bloco-superior">
+
+        <ul class="redes-sociais">
+
+            <li class="icone"> <a href="/instagram"><i class="fa fa-facebook"></i></a> </li>
+
+            <li class="icone"> <a href="/instagram"><i class="fa fa-instagram"></i></a> </li>
+
+            <li class="icone"> <a href="/instagram"><i class="fa-brands fa-youtube"></i></a> </li>
+
+            <li class="icone"> <a href="/instagram"><i class="fa fa-linkedin"></i></a> </li>
+
+        </ul>
+
+        <div class="textos">
+
+            <a href="tel:163954942000"><img src="https://techto.com.br/wp-content/uploads/2019/02/LOGOTIPO-BRANCA-T.webp"> Televendas: (16) 3954-9420 </a>
+
+        </div>
+
+    </div>
+
+    <div class="bloco-inferior">
+
+        <div class="zona-blocos">
+
+            <a class="logo-area" href="<?= home_url() ?>">
+
+                <?php
+                $custom_logo_id = get_theme_mod( 'custom_logo' );
+                $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                if ( has_custom_logo() ) {
+                    echo '<img class="logo" src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
+                } else {
+                    echo '<h1 class="logo">' . get_bloginfo('name') . '</h1>';
+                }
+                ?>
+
+            </a>
+
+            <?php
+            wp_nav_menu(
+                array(
+                    'theme_location' => 'menu-principal',
+                    'container'      => 'nav',
+                    'container_class'=> 'navbar navbar-expand-lg navbar-light',
+                    'container_id'   => 'navbarTogglerDemo01',
+                    'menu_class'     => 'navbar-nav',
+                    'walker'         => new Custom_Bootstrap_Nav_Walker(),
+                    'items_wrap'     => '
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul id="%1$s" class="%2$s">%3$s</ul> 
+                    </div>',
+                )
+            );
+            ?>
+
+            <div class="bloco-pesquisa">
+
+                <form class="form-pesquisa" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+
+                    <input type="text" placeholder="Pesquisar" name="s" value="<?= $pesquisa ?>">
+
+                    <button type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
 
 <main>
-
-

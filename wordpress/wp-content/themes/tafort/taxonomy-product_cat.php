@@ -22,7 +22,7 @@ get_header();
 
             <div class="filtros">
 
-                <?= the_content() ?>
+                <?php do_shortcode('[woof_front_builder]') ?>
 
             </div>
 

@@ -1,5 +1,6 @@
 @import "../variaveis";
 
+/**
 header{
 
   width: 100%;
@@ -232,8 +233,6 @@ header{
   }
 }
 
-
-
 @media  screen and (max-width: 770px){
   header{
 
@@ -286,5 +285,294 @@ header{
       }
     }
 
+  }
+}
+
+*/
+
+@import "../variaveis";
+
+header{
+
+  width: 100%;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  background-color: $verde;
+  align-items: center;
+
+  .bloco-superior{
+
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+
+    .redes-sociais{
+
+      display: flex;
+      gap: 20px;
+
+      .icone{
+
+        i{
+
+          font-size: $fs18;
+          color: $branco;
+
+        }
+      }
+    }
+
+    .textos{
+
+      display: flex;
+      gap: 10px;
+
+      .divisor{
+
+        width: 2px;
+        background-color: $branco;
+      }
+
+      a{
+
+        color: $branco;
+        font-size: $fs18;
+        font-weight: 700;
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        img{
+
+          width: 25px;
+        }
+      }
+    }
+  }
+
+  .bloco-inferior{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: $branco;
+    align-items: center;
+
+    .zona-blocos{
+
+      width: 100%;
+      max-width: 1024px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .logo-area{
+
+        width: 200px;
+
+        .logo{
+
+          width: 100%;
+
+        }
+      }
+
+      .navbar{
+
+        .nav-link{
+
+          font-size: $fs16;
+          font-weight: 700;
+          color: $cinza;
+        }
+
+        .dropdown-menu{
+
+          left: auto;
+        }
+      }
+    }
+
+    .bloco-pesquisa{
+
+      width: 100%;
+      max-width: 150px;
+
+      .form-pesquisa{
+
+        width: 100%;
+        border: 1px solid $cinza;
+        border-radius: 25px;
+        display: flex;
+        padding: 10px 0;
+
+        input{
+
+          width: 80%;
+          padding: 0 25px;
+          border-radius: 25px;
+          border: none;
+
+          &:focus-visible{
+
+            outline: none;
+          }
+        }
+
+        button{
+
+          border: none;
+          background-color: transparent;
+
+          &:focus-visible, &:focus{
+
+            outline: none;
+          }
+
+          i{
+
+            font-size: $fs20;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media  screen and (max-width: 778px) {
+
+  header{
+
+    .bloco-superior{
+
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      flex-direction: column;
+      padding: 10px;
+      gap: 20px;
+
+      .redes-sociais{
+
+        display: flex;
+        gap: 20px;
+      }
+
+      .textos{
+
+        a{
+
+          font-size: $fs14;
+
+        }
+      }
+    }
+
+    .bloco-inferior{
+
+      .zona-blocos{
+
+        max-width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .logo-area{
+
+          width: 200px;
+
+          .logo{
+
+            width: 100%;
+
+          }
+        }
+
+        .navbar{
+
+          .collapse.show, .collapsing {
+
+            position: fixed !important;
+            z-index: 10;
+            top: 160px !important;;
+            left: 0 !important;;
+            display: block;
+            width: 100%;
+            background-color: $branco;
+
+            .menu-item {
+
+              padding: 10px;
+              border-bottom: 1px solid $preto;
+
+              .dropdown-menu{
+
+                border: none;
+
+                .menu-item {
+
+                  border-bottom: none;
+                }
+              }
+
+              &:last-child{
+
+                border: none;
+              }
+            }
+          }
+        }
+      }
+
+      .bloco-pesquisa{
+
+        width: 100%;
+        max-width: 90%;
+
+        .form-pesquisa{
+
+          width: 100%;
+          border: 1px solid $cinza;
+          border-radius: 25px;
+          display: flex;
+          padding: 10px 0;
+
+          input{
+
+            width: 80%;
+            padding: 0 25px;
+            border-radius: 25px;
+            border: none;
+
+            &:focus-visible{
+
+              outline: none;
+            }
+          }
+
+          button{
+
+            border: none;
+            background-color: transparent;
+
+            &:focus-visible, &:focus{
+
+              outline: none;
+            }
+
+            i{
+
+              font-size: $fs20;
+            }
+          }
+        }
+      }
+    }
   }
 }
