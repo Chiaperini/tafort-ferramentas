@@ -186,3 +186,15 @@ class Custom_Bootstrap_Nav_Walker extends Walker_Nav_Menu {
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }
 }
+
+function custom_product_category_widget_init() {
+    register_sidebar( array(
+        'name'          => 'Product Category Sidebar',
+        'id'            => 'product_category_sidebar',
+        'before_widget' => '<div class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widgettitle">',
+        'after_title'   => '</h2>',
+    ) );
+}
+add_action( 'widgets_init', 'custom_product_category_widget_init' );

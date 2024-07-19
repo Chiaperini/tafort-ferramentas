@@ -2,12 +2,11 @@
 
 get_header();
 
- $categoria = str_replace("-", " ", get_page_uri());
+$categoria = str_replace("-", " ", get_page_uri());
 
 ?>
 
 <div class="categoria">
-
 
     <div class="page-name">
         <h4> Exibindo</h4>
@@ -20,7 +19,11 @@ get_header();
 
             <div class="filtros">
 
-                <?php do_shortcode('[woof_front_builder]') ?>
+                <div class="product-category-sidebar">
+                    <?php if ( is_active_sidebar( 'product_category_sidebar' ) ) : ?>
+                        <?php dynamic_sidebar( 'product_category_sidebar' ); ?>
+                    <?php endif; ?>
+                </div>
 
             </div>
 
@@ -45,13 +48,16 @@ get_header();
               ?>
 
                     <li>
+
                         <a class="produto" href="<?php the_permalink(); ?>">
                             <img class="thumbnail" src="<?php echo get_the_post_thumbnail_url(); ?>">
                             <h3><?php the_title(); ?></h3>
                         </a>
+
                     </li>
 
                 <?php endwhile; wp_reset_query(); ?>
+
             </ul>
 
         </div>
