@@ -9,37 +9,69 @@ get_header();
 
     <div class="lista-categorias">
 
-        <?php
+    <?php
+    // Número de categorias por página
+    $categorias_por_pagina = 24;
 
-        $categoriasArray = array(
-            'taxonomy'   => 'product_cat',
-            'orderby'    => 'name',
-            'hide_empty' => false, // Change to true if you want to hide empty categories
-        );
+    // Página atual
+    $pagina_atual = max(1, get_query_var('paged'));
 
-        $categorias = get_terms($categoriasArray);
+    // Argumentos da query
+    $args = array(
+        'taxonomy'   => 'product_cat',
+        'orderby'    => 'name',
+        'hide_empty' => false, // Alterar para true se quiser esconder categorias vazias
+        'number'     => $categorias_por_pagina,
+        'offset'     => ($pagina_atual - 1) * $categorias_por_pagina,
+    );
 
-            foreach( $categorias as $categoria ) {
+    // Obter as categorias
+    $categorias = get_terms($args);
 
-                $thumbnail_id = get_term_meta($categoria->term_id, 'thumbnail_id', true);
+    // Exibir as categorias
+    foreach ($categorias as $categoria) {
+        $thumbnail_id = get_term_meta($categoria->term_id, 'thumbnail_id', true);
+        $image_url = wp_get_attachment_url($thumbnail_id);
 
-                $image_url = wp_get_attachment_url($thumbnail_id);
+        if ($categoria->name != "slide") {
+            ?>
+            <a class="categoria" target="_blank" href="<?= get_term_link($categoria) ?>" style="background-image: url(<?= $image_url ?>)">
+                <span class="nome-categoria"><?= $categoria->name ?></span>
+            </a>
+            <?php
+        }
+    }
+    ?>
 
-                if($categoria -> name != "slide"){
+    </div>
 
+    <div class="pagination">
+    <?php
+    // Total de categorias
+    $total_categorias = wp_count_terms(array(
+        'taxonomy'   => 'product_cat',
+        'hide_empty' => false,
+    ));
 
-                ?>
+    // Configurar a paginação
+    $paginas = paginate_links(array(
+        'base'      => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
+        'format'    => '?paged=%#%',
+        'current'   => $pagina_atual,
+        'total'     => ceil($total_categorias / $categorias_por_pagina),
+        'prev_text' => __('<'),
+        'next_text' => __('>'),
+        'type'      => 'array'
+    ));
 
-                <a class="categoria" target="_blank" href="<?= get_term_link($categoria) ?>" style="background-image: url(<?= $image_url ?>)">
-
-                    <span class="nome-categoria"><?= $categoria -> name ?></span>
-
-                </a>
-
-            <?php } }
-
-        ?>
-
+    if ($paginas) {
+        echo '<ul class="pagination">';
+        foreach ($paginas as $pagina) {
+            echo '<li>' . $pagina . '</li>';
+        }
+        echo '</ul>';
+    }
+    ?>
     </div>
 
 </div>

@@ -21,13 +21,19 @@
                 <?php
                 wp_nav_menu(
                     array(
-                        'theme_location' => 'menu-footer',
-                        'container'      => 'ul',
-                        'container_class'=> 'collapse navbar-collapse',
+                        'theme_location' => 'menu-principal',
+                        'container'      => 'nav',
+                        'container_class'=> 'navbar navbar-expand-lg navbar-light',
                         'container_id'   => 'navbarTogglerDemo01',
-                        'menu_class'     => 'paginas',
-                        'li_class'  => 'pagina',
-                        'walker'         => new Bootstrap_Nav_Walker(),
+                        'menu_class'     => 'navbar-nav',
+                        'walker'         => new Custom_Bootstrap_Nav_Walker(),
+                        'items_wrap'     => '
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul id="%1$s" class="%2$s">%3$s</ul> 
+                        </div>',
                     )
                 );
                 ?>
