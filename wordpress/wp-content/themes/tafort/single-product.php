@@ -10,13 +10,25 @@ $imagemDestaque = get_the_post_thumbnail_url();
 $tipoPost = get_post_type();
 $shortDescription = get_the_excerpt();
 
-
 if ($tipoPost == 'product') {
 
     $product = wc_get_product($idPost);
     $attachment_ids = $product->get_gallery_image_ids();
     $dados = wc_get_product_category_list($idPost);
 
+    $categories = get_the_terms($idPost, 'product_cat');
+    $filteredCategories = array_filter($categories, function($category) {
+        return $category->name !== 'slide';
+    });
+
+    $filteredCategoryNames = array_map(function($category) {
+        return $category->name;
+    }, $filteredCategories);
+
+    // Mapeie os nomes das categorias para seus slugs
+    $filteredCategorySlugs = array_map(function($category) {
+        return sanitize_title($category->name);
+    }, $filteredCategories);
     ?>
 
     <div class="produto">
@@ -31,7 +43,7 @@ if ($tipoPost == 'product') {
 
                     <?php
                     foreach ($attachment_ids as $attachment_id) :
-                            $original_image_url = wp_get_attachment_url($attachment_id);
+                        $original_image_url = wp_get_attachment_url($attachment_id);
                     ?>
                         <img class="img" src="<?= $original_image_url ?>" onclick="changeMainImage('<?= $original_image_url ?>')">
                     <?php endforeach; ?>
@@ -47,7 +59,12 @@ if ($tipoPost == 'product') {
 
                 <div class="dados">
                     <h4>Categorias:</h4>
-                    <span><?= $dados ?></span>
+
+                    <?php 
+                    foreach ($filteredCategorySlugs as $index => $slug) { ?>
+                        <a href="/categoria-produto/  <?= $slug ?>"> <span><?= $filteredCategoryNames[$index] ?></span> ;</a>
+                    <?php } ?>
+
                 </div>
             </div>
         </div>

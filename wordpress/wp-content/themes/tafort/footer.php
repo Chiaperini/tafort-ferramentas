@@ -21,7 +21,7 @@
                 <?php
                 wp_nav_menu(
                     array(
-                        'theme_location' => 'menu-principal',
+                        'theme_location' => 'menu-footer',
                         'container'      => 'nav',
                         'container_class'=> 'navbar navbar-expand-lg navbar-light',
                         'container_id'   => 'navbarTogglerDemo01',

@@ -84,20 +84,24 @@
   
         h4{
   
-          font-size: $fs12;
-          font-weight: 400;
+          font-size: $fs14;
+          font-weight: bold;
         }
   
-        span{
-  
+        a{
+          
           display: flex;
-          gap: 3px;
-  
-          a{
-  
-            font-size: $fs14;
-            font-weight: 600;
-            color: $verde;
+          flex-direction: row;
+          
+          
+          span{
+      
+              display: flex;
+              gap: 3px;
+              font-size: $fs15;
+              color: $verde;
+              font-weight: bold;
+              padding-right: 2px;
           }
         }
       }

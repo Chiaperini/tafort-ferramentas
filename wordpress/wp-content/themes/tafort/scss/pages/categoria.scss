@@ -1,285 +1,156 @@
 @import "../variaveis";
 
+.categoria{
 
-main{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
 
-    .categoria{
+
+    .page-name{
 
         display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: 1024px;
-    
-        .page-name{
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
 
-            display: flex;
-            justify-content: center;
-            text-align: center;
-            gap: 10px;
+        .h4-verde{
 
-            .h4-verde{
-
-                color: $verde;
-                font-weight: bold;
-            }
+            color: $verde;
+            font-weight: bold;
         }
+    }
 
-        .blocos{
+    .blocos{
 
+        width: 100%;
+        gap: 5%;
+        display: flex;
+        flex-direction: row;
+        padding-top: 50px;
+        justify-content: space-between;
+
+        .bloco-filtro{
+
+            width: auto;
+            max-width: 15%;
             display: flex;
-            flex-direction: row;
-            padding-top: 50px;
-            justify-content: center;
-
-            .bloco-esq{
-
-                width: auto;
-                max-width: 25%;
-                display: flex;
-        
-                .filtros{
+            height: fit-content;
+            border-radius: 10px;
+ 
     
-                    width: 90%;
+            .filtro{
+
+                max-width: 100%;
+                gap: 30px;
+                display: flex;
+                flex-direction: column;
+                border-radius: 10px;
+                padding: 20px;
+                background-color: $cinza-mtClaro;
+
+                .grupo {
+
                     display: flex;
                     flex-direction: column;
-                    border-radius: 20px;
-                    padding: 15px;
-                    height: 500px;
-    
-                    
-                    .filtro{
-             
-                        .berocket_single_filter_widget{
-        
-                            width: 100%;
-                            height: 100%;
-                        
-                           .bapf_sfilter{
-            
-                                width: 100%;
-                                height: 100%;
-            
-                            
-                                .bapf_head{
-                                    
-                                    background-color: $cinza-mtClaro;
-                                    border-top:  20px solid $cinza-mtClaro;
-                                    border-left:  20px solid $cinza-mtClaro;
-                                    border-right:  20px solid $cinza-mtClaro;
-            
-                                    h3{
-                                        
-                                        width: 100%;
-                                        height: 10%;
-                                        font-size: $fs18;
-                                    }
-                                }
-            
-                                .bapf_body{
+                }
 
-                                    background-color: $cinza-mtClaro;
-                                    border-bottom:  20px solid $cinza-mtClaro;
-                                    border-left:  20px solid $cinza-mtClaro;
-                                    border-right:  20px solid $cinza-mtClaro;
+                .botoes{
 
-                                    .select2-selection{
+                    max-width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
 
-                                        align-content: center;
+                    .btn-filtro{
+  
+                        width: 45%;
+                        color: $branco;
+                        background-color: $verde;
+                        border: none;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        transition: 0.3s;
 
-                                        ul{
-                                    
-                                            display: flex;
-                                            flex-direction: column;
-                                            width: 100%;
-                                            height: 90%;
-                                            gap: 10px 0;
-                                            justify-content: space-around;
-                                            font-size: 15px;
-        
-                                            li{
-        
-                                                display: flex;
-                                                gap: 10px;
-        
-                                                label{
-        
-                                                    font-size: $fs12;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+                        &:hover{
+
+                            scale: 1.05;
+                        }
+                    }
+
+                    .btn-clear{
+
+                        width: 45%;
+                        color: $branco;
+                        background-color: $verde;
+                        border: none;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        transition: 0.3s;
+
+                        &:hover{
+
+                            scale: 1.05;
                         }
                     }
                 }
-            }
-        
-        
-            .bloco-dir{
-        
-                width: 75%;
-                display: flex;
-                
-                .lista-resultados{
-        
-                    width: 100%;
-                    
-                    .woocommerce-result-count{
-                        
-                        display: none;
-                    }
-    
-                    .woocommerce-ordering{
-                        
-                        display: none;
-                    }
-        
-                    .products{
-    
-                        display: flex;
-                        flex-direction: row;
-                        flex-wrap: wrap;
-                        gap: 25px 29px;
-                        justify-content: start;
-
-    
-                        .product{
-        
-                            display: flex;
-                            list-style: none;
-                            margin: 0;
-                            padding: 0;
-                            width: 170px;
-                            height: 170px;
-                            
-                            
-            
-                            a{
-            
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                                justify-content: start;
-                                width: 100%;
-                                transition: 0.3s;
-                                &:hover{
-            
-                                    scale: 1.05;
-                                }
-                                
-            
-                                .light{
-                                
-                                    display: none;
-                                    width: 150px;
-                                    height: 150px;
-                                    background-color: rgba(255, 255, 255, 0.402);
-                                    position: absolute;
-            
-                                    
-                                }
-            
-                                img{
-                                    
-                                    width: 85% !important;
-                                    height: 85% !important; 
-                                    padding: 10px 10px 0 10px;
-            
-                                   
-                                }
-            
-                                h2{
-            
-                                    width: 100%;
-                                    color: $preto;
-                                    text-align: center;
-                                    align-self: flex-start;
-                                    padding-bottom: 5px;
-                                    font-size: 11px !important;
-                                }
-        
-                            }
-    
-                            .button{
-                                
-                                display: none !important;
-                            }
-            
-                        }
-    
-                    }
-
-                    .woocommerce-pagination{
-
-
-                        padding-top: 40px;
-                        
-                        .page-numbers{
-
-                            display: flex;
-                            justify-content: center;
-                            gap: 20px;
-
-                            a{
-
-                                display: flex;
-                                width: 25px;
-                                height: 30px;
-                                justify-content: center;
-                                align-items: center;
-                            }
-
-                            .current{
-
-                                color: $verde;
-                                display: flex;
-                                width: 25px;
-                                height: 30px;
-                                justify-content: center;
-                                align-items: center;
-                            }
-
-                            .numbers{
-
-                                color: $preto;
-
-                                &:hover{
-
-                                    background-color: $cinza-paginacao;
-                                } 
-                            }
-
-                            .prev{
-                                
-                                color: $preto;
-
-                                &:hover{
-
-                                    background-color: $cinza-paginacao;
-                                } 
-                            }
-
-                            .next{
-                                
-                                color: $preto;
-                            
-                                &:hover{
-
-                                    background-color: $cinza-paginacao;
-                                } 
-                            }
-
-                        }
-                    }
-        
-                }
-        
             }
         }
     
+    
+        .bloco-produtos{
+    
+            width: 80%;
+            display: flex;
+
+            .lista-produtos{
+
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 25px;
+
+                li{
+
+                    width: 230px;
+                    height: 380px;
+                    transition: .3s;
+
+                    .produto {
+
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        box-shadow: 0 3px 5px rgba(0, 0, 0, .6);
+                        justify-content: center;
+                        border-radius: 10px;
+
+                        img{
+
+                            width: 90%;
+                        }
+
+                        h3{
+
+                            font-size: 16px;
+                            text-align: center;
+                            color: $verde;
+                            font-weight: 600;
+                            width: 90%;
+                        }
+                    }
+                    &:hover{
+
+                        scale: 1.05;
+                    }
+                }
+                
+            }                
+        }
     }
-  
+
 }
 
 
@@ -302,7 +173,7 @@ main{
                 flex-direction: column;
                 justify-content: center;
 
-                .bloco-esq{
+                .bloco-filtros{
 
                     width: 100%;
                     max-width:100%;
@@ -389,102 +260,89 @@ main{
                     }
                 }
             
-                .bloco-dir{
+                .bloco-produtos{
             
                     width: 75%;
                     display: flex;
                     align-self: center;
-                    
-                    .lista-resultados{
-            
-                        .woocommerce-result-count{
+                
+                    .woocommerce-result-count{
     
-                            display: none;
-                        }
+                        display: none;
+                    }
+    
+                    .woocommerce-ordering{
+
+                        display: none;
+                    }
         
-                        .woocommerce-ordering{
+                    .products{
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        gap: 25px;
     
-                            display: none;
-                        }
-            
-                        .products{
+                        .product{
+        
                             display: flex;
-                            flex-direction: row;
-                            flex-wrap: wrap;
-                            justify-content: center;
-                            gap: 25px;
-        
-                            .product{
+                            list-style: none;
+                            margin: 0;
+                            padding: 0;
+                            width: 170px;
+                            height: 170px;
+                            
+                            
+            
+                            a{
             
                                 display: flex;
-                                list-style: none;
-                                margin: 0;
-                                padding: 0;
-                                width: 170px;
-                                height: 170px;
-                                
-                                
-                
-                                a{
-                
-                                    display: flex;
-                                    flex-direction: column;
-                                    align-items: center;
-                                    justify-content: start;
-                                    width: 100%;
-                
-                                    &:hover{
-                
-                                        .light{
-                
-                                            display: flex;
-                                          }
-                
-                                    }
-                                    
-                
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: start;
+                                width: 100%;
+            
+                                &:hover{
+            
                                     .light{
-                                    
-                                        display: none;
-                                        width: 150px;
-                                        height: 150px;
-                                        background-color: rgba(255, 255, 255, 0.402);
-                                        position: absolute;
-                
-                                        
-                                    }
-                
-                                    img{
-                                        
-                                        width: 85% !important;
-                                        height: 85% !important; 
-                                        padding: 10px 10px 0 10px;
-                
-                                       
-                                    }
-                
-                                    h2{
-                
-                                        color: $preto;
-                                        text-align: center;
-                                        align-self: flex-start;
-                                        padding-bottom: 5px;
-                                        font-size: 11px !important;
-                                    }
+            
+                                        display: flex;
+                                      }
             
                                 }
-        
-                                .button{
+                                
+            
+                                img{
                                     
-                                    display: none !important;
+                                    width: 85% !important;
+                                    height: 85% !important; 
+                                    padding: 10px 10px 0 10px;
+            
+                                   
                                 }
+            
+                                h2{
+            
+                                    color: $preto;
+                                    text-align: center;
+                                    align-self: flex-start;
+                                    padding-bottom: 5px;
+                                    font-size: 11px !important;
+                                }
+        
                 
                             }
         
+                            .button{
+                                    
+                                display: none !important;
+                            }
+                
+                        
+        
                         }
-            
                     }
-            
+                    
                 }
             }
         

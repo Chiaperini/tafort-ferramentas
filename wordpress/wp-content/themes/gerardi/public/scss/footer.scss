@@ -1,0 +1,27 @@
+@import "variaveis"; 
+
+.footer{
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .dino{
+
+        width: 200px;
+    }
+
+    span{
+
+        color: $branco;
+        padding-bottom: 20px;
+    }
+
+    .onib{
+
+        width: 200px;
+        transform: scaleX(-1);
+    }
+}

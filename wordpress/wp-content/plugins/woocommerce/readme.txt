@@ -1,10 +1,10 @@
 === WooCommerce ===
 Contributors: automattic, woocommerce, mikejolley, jameskoster, claudiosanches, rodrigosprimo, peterfabian1000, vedjain, jamosova, obliviousharmony, konamiman, sadowski, wpmuguru, royho, barryhughes-1, claudiulodro, tiagonoronha, ryelle, levinmedia, aljullu, nerrad, joshuawold, assassinateur, haszari, mppfeiffer, nielslange, opr18, ralucastn, tjcafferkey, danielwrobert, patriciahillebrandt, albarin, dinhtungdu, imanish003, karolmanijak, sunyatasattva, alexandrelara, gigitux, danieldudzic, samueljseay, alexflorisca, opr18, tarunvijwani, pauloarromba, saadtarhi, bor0, kloon, coreymckrill, jorgeatorres, leifsinger
 Tags: online store, ecommerce, shop, shopping cart, sell online
-Requires at least: 6.4
-Tested up to: 6.5
+Requires at least: 6.5
+Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 9.1.0
+Stable tag: 9.1.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -169,10 +169,11 @@ WooCommerce comes with some sample data you can use to see how products look; im
 
 == Changelog ==
 
-= 9.1.1 2024-07-11 =
+= 9.2.1 2024-08-21 =
 
 **WooCommerce**
 
-* Tweak - Revert #46262, as that PR would render input values invisible under certain conditions. [49404](https://github.com/woocommerce/woocommerce/pull/49404)
+* Fix - Revert turning of AccessiblePrivateMethods::_accessible_private_methods into a static property because it caused fatal errors in some edge cases. [#50809](https://github.com/woocommerce/woocommerce/pull/50809)
+
 
 [See changelog for all versions](https://raw.githubusercontent.com/woocommerce/woocommerce/trunk/changelog.txt).

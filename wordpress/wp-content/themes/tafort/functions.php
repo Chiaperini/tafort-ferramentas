@@ -1,6 +1,9 @@
 <?php
 
-
+// Remove o srcset
+add_filter('wp_calculate_image_srcset', '__return_false');
+add_filter('wp_calculate_image_sizes', '__return_false');
+add_filter('wp_calculate_image_srcset_meta', '__return_null');
 
 function mytheme_add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
@@ -13,12 +16,19 @@ register_nav_menus(
 array(
 	'menu-principal' => __( 'Menu Principal' ),
 	'menu-footer' => __( 'Menu Footer' ),
-
 )
 );
 }
 add_action( 'init', 'wpb_custom_new_menu' );
 
+function enqueue_advanced_ajax_product_filters_scripts() {
+    if (is_product_category()) {
+        wp_enqueue_script('jquery');
+        wp_enqueue_script('br_ajax_filters');
+        wp_enqueue_style('br_ajax_filters_css');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_advanced_ajax_product_filters_scripts');
 
 function wmpudev_enqueue_icon_stylesheet()
 {

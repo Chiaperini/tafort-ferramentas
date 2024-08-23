@@ -17,22 +17,8 @@ $fundo = get_field('imagem') ;
         <div class="bloco-esq">
 			<div class="filtros">
 			<div class="filtro">
-					<?php echo do_shortcode('[br_filter_single filter_id=981]'); ?>
-				</div>
-				<div class="filtro">
-					<?php echo do_shortcode('[br_filter_single filter_id=1457]'); ?>
-				</div>
-				<div class="filtro">
-					<?php echo do_shortcode('[br_filter_single filter_id=1456]'); ?>
-				</div>
-                <div class="filtro">
-					<?php echo do_shortcode('[br_filter_single filter_id=1455]'); ?>
-				</div>
-				<div class="filtro">
-					<?php echo do_shortcode('[br_filter_single filter_id=1454]'); ?>
-				</div>
-				
-			</div>
+					<?php echo do_shortcode("[woof  sid='generator_66c3276eb74b1' autohide='0' autosubmit='1' is_ajax='1' ajax_redraw='1' start_filtering_btn='0' btn_position='b' dynamic_recount='-1' hide_terms_count_txt='0' mobile_mode='0' ]"); ?>
+			</div>	
 		</div>
         <div class="bloco-dir">
             <ul class="lista-resultados">

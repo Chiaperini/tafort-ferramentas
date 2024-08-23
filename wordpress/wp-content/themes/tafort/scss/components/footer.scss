@@ -32,37 +32,20 @@ footer{
           width: 250px;
         }
       }
-      
-      .paginas{
 
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 5%;
-        padding-top: 20px;
-
- 
-
-        .dropdown-item {
-
-          width: auto;
-          text-align: center;
-
-          a{
+      .nav-link{
 
           color: $branco;
           font-size: $fs14;
           font-weight: 700;
           transition: .3s;
-          }
-
-          &:hover{
-
-            border-bottom: 1px solid $branco;
-            background-color: transparent;
-          }
-        }
-      }  
+      
+      }
+      &:hover{
+        
+        background-color: transparent;
+      }
+      
 
       .redes-sociais{
 
