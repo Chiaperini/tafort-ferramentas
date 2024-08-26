@@ -2,9 +2,13 @@
 get_header();
 $categoria_slug = isset($_GET['categoria']) ? sanitize_text_field($_GET['categoria']) : get_queried_object()->slug;
 
+// Obtém a página atual
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
 $args = array(
     'post_type' => 'product',
-    'posts_per_page' => -1,
+    'posts_per_page' => 12,
+    'paged' => $paged, // Adiciona paginação
     'tax_query' => array(
         array(
             'taxonomy' => 'product_cat',
@@ -26,17 +30,16 @@ foreach ($products as $product) {
         break;
     }
 }
-
 ?>
 
 <div class="categoria">
 
     <div class="page-name">
         <h4> Exibindo</h4>
-        <h4 class="h4-verde"><?php woocommerce_page_title();?></h4>
+        <h4 class="h4-verde"><?php woocommerce_page_title(); ?></h4>
     </div>
     <div class="blocos">
-        <div class="bloco-filtro">
+        <div class="bloco-filtro <?php echo $has_attributes ? 'filtro-visivel' : 'filtro-oculto'; ?>">
 
             <?php if ($has_attributes) { ?>
                 <form method="GET" class="filtro" action="" onsubmit="removeEmptyInputs()">
@@ -133,6 +136,17 @@ foreach ($products as $product) {
                 ?>
 
             </ul>
+            <div class="paginacao">
+                <?php
+                echo paginate_links(array(
+                    'total' => $query->max_num_pages,
+                    'current' => $paged,
+                    'format' => '?paged=%#%',
+                    'prev_text' => __('<'),
+                    'next_text' => __('>'),
+                ));
+                ?>
+            </div>
         </div>
     </div>
 

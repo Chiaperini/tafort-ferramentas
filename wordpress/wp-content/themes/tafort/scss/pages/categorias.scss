@@ -52,20 +52,32 @@
   }
 
   .pagination{
-
-    width: 200px;
+                
     display: flex;
-    justify-content: space-between;
+    align-self: center;
+    font-size: $fs16;
+
+    .current{   
+
+        color: $verde !important;
+        background-color: $cinza-mtClaro !important;
+        font-weight: bold;
+    }
 
     .page-numbers{
 
-      color: $preto;  
-    }
+        color: $preto;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $cinza-claro;
+        transition: 0.3s;
+        &:hover{
 
-    .current{
-
-      color: $verde !important;
-      font-weight: 700;
+            background-color: $cinza-claro;
+        }
     }
   }
 }

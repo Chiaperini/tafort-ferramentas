@@ -28,17 +28,27 @@
         display: flex;
         flex-direction: row;
         padding-top: 50px;
-        justify-content: space-between;
+        justify-content: center;
 
-        .bloco-filtro{
 
-            width: auto;
-            max-width: 15%;
+        .filtro-visivel {
+
             display: flex;
+            width: 15%;
             height: fit-content;
             border-radius: 10px;
- 
-    
+        }
+        
+        .filtro-oculto {
+
+            display: none;            
+            width: 15%;
+            height: fit-content;
+            border-radius: 10px;
+        }
+        
+
+        .bloco-filtro{
             .filtro{
 
                 max-width: 100%;
@@ -100,19 +110,24 @@
     
         .bloco-produtos{
     
-            width: 80%;
+            width: 70%;
+            max-width: 1100px;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
 
             .lista-produtos{
 
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
-                gap: 25px;
+                justify-content: start;
+                gap: 20px 4%;
 
                 li{
 
-                    width: 230px;
+                    width: 22%;
                     height: 380px;
                     transition: .3s;
 
@@ -147,7 +162,37 @@
                     }
                 }
                 
-            }                
+            }         
+            
+            .paginacao{
+                
+                display: flex;
+                align-self: center;
+                font-size: $fs16;
+
+                .current{   
+
+                    color: $verde !important;
+                    background-color: $cinza-mtClaro !important;
+                    font-weight: bold;
+                }
+
+                .page-numbers{
+
+                    color: $preto;
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid $cinza-claro;
+                    transition: 0.3s;
+                    &:hover{
+
+                        background-color: $cinza-claro;
+                    }
+                }
+            }
         }
     }
 

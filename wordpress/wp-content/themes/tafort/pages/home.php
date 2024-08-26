@@ -106,7 +106,7 @@ $acesso_url3 = get_field('url_acesso_3');
             $args = array(
                 'post_type'      => 'product',
                 'posts_per_page' => 10,
-                'product_cat'    => 'slide',
+                'product_cat'    => 'uncategorized',
             );
 
             $loop = new WP_Query($args);
