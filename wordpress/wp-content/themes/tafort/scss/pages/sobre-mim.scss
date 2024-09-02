@@ -80,3 +80,34 @@
 
 
 }
+
+@media  screen and (max-width: 770px) {
+
+  .sobre-mim{
+
+    .cabecalho{
+
+      h1{
+
+        font-size: $fs20;
+        text-align: center;
+      }
+
+      p{
+
+        font-size: $fs18;
+        text-align: center;
+      }
+    }
+  
+    .textos {
+  
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+}

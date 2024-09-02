@@ -307,7 +307,9 @@
   
         display: flex;
         justify-content: center;
-        gap: 0 30px;
+        gap: 30px;
+        flex-direction: column;
+        align-items: center;
   
         .acesso{
   

@@ -131,7 +131,7 @@ $acesso_url3 = get_field('url_acesso_3');
         <script type="text/javascript">
             jQuery(document).ready(function($) {
                 $('.slide-produtos').slick({
-                    slidesToShow: 3,
+                    slidesToShow: 3,    
                     slidesToScroll: 1,
                     autoplay: true,
                     autoplaySpeed: 2000,
