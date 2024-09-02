@@ -204,12 +204,9 @@
   }
 }
 
-
 @media  screen and (max-width: 770px){
 
-
   .produto{
-
  
     padding: 20px;
 
@@ -235,22 +232,20 @@
       }
     }
 
-    
-
     .titulo-destaque{
         
       width: 100%;
     }
-  
 
     .produtos-relacionados{
 
       .produtos{
 
+        height: auto;
         flex-wrap: wrap;
         overflow: visible;
+        justify-content: space-between;
       }
     }
-    
   }
 }
