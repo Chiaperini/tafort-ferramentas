@@ -16,6 +16,7 @@
     max-width: 1024px;
     gap: 20px 1.7%;
     padding: 20px 0;
+    justify-content: center;
 
     .categoria{
 
@@ -26,6 +27,7 @@
       background-size: cover;
       background-position: center;
       text-align: center;
+      border-radius: 15px;
       box-shadow: 5px 5px 10px rgba( $preto , 0.5);
 
       .nome-categoria{
@@ -41,6 +43,7 @@
         font-weight: 700;
         transition: .3s;
         padding: 5%;
+        border-radius: 15px;
 
         &:hover{
 

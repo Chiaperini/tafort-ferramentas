@@ -3,38 +3,44 @@
 get_header();
 
 $fundo = get_field('imagem');
-$pesquisa = $_GET['s']
+$pesquisa = $_GET['s'];
+
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+$args = array(
+    'post_type' => 'product',
+    'posts_per_page' => -1, // Display all projects
+    'paged' => $paged,
+    'tax_query' => array(),
+);
+
+if (isset($_GET['s']) && !empty($_GET['s'])) {
+    $args['s'] = sanitize_text_field($_GET['s']);
+}
+
+$query = new WP_Query($args);
+
 ?>
-
-
-
 
 <div class="index-page">
 
 	<div class="page-name">
-         <h4> Exibindo</h4><h4 class="h4-verde"><?= $pesquisa ?></h4>
+        <?php if ($query->have_posts()): ?>
+        
+            <h4>Exibindo <spam class="h4-verde"><?= $pesquisa ?> </spam></h4>
+        
+        <?php else: ?>
+
+            <h4 class="h4-verde">Erro de Pesquisa</h4>;
+            <p>Nenhum produto encontrado.</p>
+        <?php endif ?>
+         
 	</div>  
 
     <div class="bloco-resultados">
 
         <ul class="lista-resultados">
-
             <?php
-            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-            $args = array(
-                'post_type' => 'product',
-                'posts_per_page' => -1, // Display all projects
-                'paged' => $paged,
-                'tax_query' => array(),
-            );
-
-            if (isset($_GET['s']) && !empty($_GET['s'])) {
-                $args['s'] = sanitize_text_field($_GET['s']);
-            }
-
-            $query = new WP_Query($args);
-
             if ($query->have_posts()) :
                 while ($query->have_posts()) : $query->the_post(); ?>
 
@@ -52,8 +58,6 @@ $pesquisa = $_GET['s']
                 <?php
                 endwhile;
                 wp_reset_postdata();
-            else :
-                echo 'Nenhum resultado encontrado.';
             endif;
             ?>
 
