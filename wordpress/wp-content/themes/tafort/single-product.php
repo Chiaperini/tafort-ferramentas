@@ -37,7 +37,7 @@ if ($tipoPost == 'product') {
 
             <div class="imagens">
 
-                <img class="img-principal" src="<?= $imagemDestaque ?>" id="img-principal">
+                <img class="img-principal" src="<?= $imagemDestaque ?>" alt="<?= bloginfo() . '-' . the_title(); ?>"">
 
                 <div class="galeria">
 
@@ -45,7 +45,7 @@ if ($tipoPost == 'product') {
                     foreach ($attachment_ids as $attachment_id) :
                         $original_image_url = wp_get_attachment_url($attachment_id);
                     ?>
-                        <img class="img" src="<?= $original_image_url ?>" onclick="changeMainImage('<?= $original_image_url ?>')">
+                        <img class="img" src="<?= $original_image_url ?>" onclick="changeMainImage('<?= $original_image_url ?>')" alt="<?= bloginfo() . '-' . the_title(); ?>">
                     <?php endforeach; ?>
 
                 </div>
@@ -119,7 +119,7 @@ if ($tipoPost == 'product') {
 
             <div class="singlePost">
 
-                <img src="<?= $imagemDestaque ?>">
+                <img src="<?= $imagemDestaque ?>" alt="<?= bloginfo() . '-' . the_title(); ?>">
 
                 <div class="textos">
 

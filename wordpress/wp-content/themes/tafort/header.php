@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -46,13 +47,13 @@ if (isset($_GET['s']) && !empty($_GET['s'])) {
 
         <ul class="redes-sociais">
 
-            <li class="icone"> <a href="/instagram"><i class="fa fa-facebook"></i></a> </li>
+            <li class="icone"> <a href="" alt="logo facebook"><i class="fa fa-facebook"></i></a> </li>
 
-            <li class="icone"> <a href="/instagram"><i class="fa fa-instagram"></i></a> </li>
+            <li class="icone"> <a href="" alt="logo instagram"><i class="fa fa-instagram"></i></a> </li>
 
-            <li class="icone"> <a href="/instagram"><i class="fa-brands fa-youtube"></i></a> </li>
+            <li class="icone"> <a href="" alt="logo youtube"><i class="fa-brands fa-youtube"></i></a> </li>
 
-            <li class="icone"> <a href="/instagram"><i class="fa fa-linkedin"></i></a> </li>
+            <li class="icone"> <a href="" alt="logo linkedin"><i class="fa fa-linkedin"></i></a> </li>
 
         </ul>
 

@@ -35,17 +35,16 @@ footer{
 
       .nav-link{
 
+        color: $branco;
+        font-size: $fs14;
+        font-weight: 700;
+        transition: .3s;
+        &:hover{
+            
+          scale: 1.1;
           color: $branco;
-          font-size: $fs14;
-          font-weight: 700;
-          transition: .3s;
-      
+        }
       }
-      &:hover{
-        
-        background-color: transparent;
-      }
-      
 
       .redes-sociais{
 

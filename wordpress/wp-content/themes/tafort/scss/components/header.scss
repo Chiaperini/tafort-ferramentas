@@ -99,6 +99,11 @@ header{
           font-size: $fs16;
           font-weight: 700;
           color: $cinza;
+          transition: .3s;
+          &:hover{
+              
+            scale: 1.1;
+          }
         }
 
         .dropdown-menu{

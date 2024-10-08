@@ -2,13 +2,12 @@
 get_header();
 $categoria_slug = isset($_GET['categoria']) ? sanitize_text_field($_GET['categoria']) : get_queried_object()->slug;
 
-// Obtém a página atual
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 $args = array(
     'post_type' => 'product',
     'posts_per_page' => 12,
-    'paged' => $paged, // Adiciona paginação
+    'paged' => $paged, 
     'tax_query' => array(
         array(
             'taxonomy' => 'product_cat',
@@ -109,7 +108,6 @@ foreach ($products as $product) {
                         <button type="submit" class="btn-filtro">Aplicar</button>
                         <button type="button" class="btn-clear" onclick="resetFilters()">Limpar</button>
                     </div>
-
                 </form>
             <?php } ?>
         </div>
@@ -124,7 +122,7 @@ foreach ($products as $product) {
 
                         <li>
                             <a class="produto" href="<?= esc_url($product_obj->get_permalink()); ?>">
-                                <img class="thumbnail" src="<?= esc_url(get_the_post_thumbnail_url($product_obj->get_id())); ?>" alt="<?= esc_attr($product_obj->get_name()); ?>">
+                                <img class="thumbnail" src="<?= esc_url(get_the_post_thumbnail_url($product_obj->get_id())); ?>" alt="<?= bloginfo() . '-' . the_title(); ?>">
                                 <h3><?= esc_html($product_obj->get_name()); ?></h3>
                             </a>
                         </li>

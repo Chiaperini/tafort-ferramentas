@@ -4,7 +4,7 @@
 
 get_header();
 
-$imagemsobre1 = get_field('imagemsobre1');
+$img_sobre_1 = get_field('img_sobre_1');
 
 ?>
 
@@ -15,7 +15,7 @@ $imagemsobre1 = get_field('imagemsobre1');
             <p>A Tafort está presente no mercado de ferramentas visando sempre garantir a satisfação do cliente.</p>
         </div>
 
-        <img src="<?= $imagemsobre1 ?>" alt="first img">
+        <img src="<?= $img_sobre_1 ?>" alt="<?= bloginfo() . '-' . the_title(); ?>">
         
         <div class="textos">
             <div class="conteudo">

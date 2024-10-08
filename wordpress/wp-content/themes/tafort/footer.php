@@ -10,7 +10,7 @@
 
                 <a class="logo" href="<?= home_url() ?>">
 
-                    <img class="logoArea" src="http://localhost/tafort-ferramentas/wordpress/wp-content/uploads/2024/05/logo-TAFORT-white.png" >
+                    <img class="logoArea" src="http://localhost/tafort-ferramentas/wordpress/wp-content/uploads/2024/05/logo-TAFORT-white.png" alt="<?= bloginfo() . '-' . the_title(); ?>">
 
                 </a>
 
@@ -44,21 +44,21 @@
 
                 <ul class="redes-sociais">
 
-                    <li class="icon"> <a href="">  <img src="http://localhost/tafort-ferramentas/wordpress/wp-content/uploads/2024/05/youtube-bg-white.png"> </a> </li>
+                    <li class="icon"> <a href="" >  <img src="http://localhost/tafort-ferramentas/wordpress/wp-content/uploads/2024/05/youtube-bg-white.png" alt="<?= bloginfo() . '-' . the_title(); ?>"> </a> </li>
 
-                    <li class="icon"> <a href=""> <img src="http://localhost/tafort-ferramentas/wordpress/wp-content/uploads/2024/05/facebook-bg-white.png"> </a> </li>
+                    <li class="icon"> <a href=""> <img src="http://localhost/tafort-ferramentas/wordpress/wp-content/uploads/2024/05/facebook-bg-white.png" alt="<?= bloginfo() . '-' . the_title(); ?>"> </a> </li>
 
-                    <li class="icon"> <a href=""> <img src="http://localhost/tafort-ferramentas/wordpress/wp-content/uploads/2024/05/instagram-bg-white.png"> </a> </li>
+                    <li class="icon"> <a href=""> <img src="http://localhost/tafort-ferramentas/wordpress/wp-content/uploads/2024/05/instagram-bg-white.png" alt="<?= bloginfo() . '-' . the_title(); ?>"> </a> </li>
 
-                    <li class="icon"> <a href=""> <img src="http://localhost/tafort-ferramentas/wordpress/wp-content/uploads/2024/05/linkedin-bg-white.png"> </a> </li>
+                    <li class="icon"> <a href=""> <img src="http://localhost/tafort-ferramentas/wordpress/wp-content/uploads/2024/05/linkedin-bg-white.png" alt="<?= bloginfo() . '-' . the_title(); ?>"> </a> </li>
 
                 </ul>
                 
                 <div class="contatos">
                     
-                    <span class="contato"> <img src="http://localhost/tafort-ferramentas/wordpress/wp-content/uploads/2024/05/telefone-white.png"> <p> (16) 3954-9400 </p> </span>
+                    <span class="contato"> <img src="http://localhost/tafort-ferramentas/wordpress/wp-content/uploads/2024/05/telefone-white.png" alt="<?= bloginfo() . '-' . the_title(); ?>"> <p> (16) 3954-9400 </p> </span>
 
-                    <span class="contato"> <img src="http://localhost/tafort-ferramentas/wordpress/wp-content/uploads/2024/05/mail-white.png"> <p> tafort@tafort.com.br </p> </span>
+                    <span class="contato"> <img src="http://localhost/tafort-ferramentas/wordpress/wp-content/uploads/2024/05/mail-white.png" alt="<?= bloginfo() . '-' . the_title(); ?>"> <p> tafort@tafort.com.br </p> </span>
 
                 </div>
 
