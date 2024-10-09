@@ -122,7 +122,7 @@ foreach ($products as $product) {
 
                         <li>
                             <a class="produto" href="<?= esc_url($product_obj->get_permalink()); ?>">
-                                <img class="thumbnail" src="<?= esc_url(get_the_post_thumbnail_url($product_obj->get_id())); ?>" alt="<?= bloginfo() . '-' . the_title(); ?>">
+                                <img loading="lazy" class="thumbnail" src="<?= esc_url(get_the_post_thumbnail_url($product_obj->get_id())); ?>" alt="<?= bloginfo() . '-' . the_title(); ?>">
                                 <h3><?= esc_html($product_obj->get_name()); ?></h3>
                             </a>
                         </li>

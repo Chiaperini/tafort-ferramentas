@@ -48,7 +48,7 @@ $query = new WP_Query($args);
 
                         <a href="<?= the_permalink(); ?>">
 
-                            <img class="thumbnail" src="<?= get_the_post_thumbnail_url(); ?> ">
+                            <img loading="lazy" class="thumbnail" src="<?= get_the_post_thumbnail_url(); ?> ">
 
                             <h2 class="nome-resultado"><?= the_title(); ?></h2>
 

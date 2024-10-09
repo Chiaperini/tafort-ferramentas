@@ -47,13 +47,13 @@ $acesso_url_3 = get_field('url_acesso_3');
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="<?= $banner_img_1 ?>" alt="<?= bloginfo() . '-' . the_title(); ?>">
+                    <img loading="lazy" class="d-block w-100" src="<?= $banner_img_1 ?>" alt="<?= bloginfo() . '-' . the_title(); ?>">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="<?= $banner_img_2 ?>" alt="<?= bloginfo() . '-' . the_title(); ?>">
+                    <img loading="lazy" class="d-block w-100" src="<?= $banner_img_2 ?>" alt="<?= bloginfo() . '-' . the_title(); ?>">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="<?= $banner_img_3 ?>" alt="<?= bloginfo() . '-' . the_title(); ?>">
+                    <img loading="lazy" class="d-block w-100" src="<?= $banner_img_3 ?>" alt="<?= bloginfo() . '-' . the_title(); ?>">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -72,7 +72,7 @@ $acesso_url_3 = get_field('url_acesso_3');
             <h1>ACESSO RÁPIDO</h1>
         </div>
         <div class="bloco-acesso">
-            <a class="acesso" href="<?= $acesso_url_1 ?>">
+            <a class="acesso" href="<?= $acesso_url_1 ?>" aria-label="Acesso a categoria eletrica">
                 <div class="capa" style="background-image: url(<?= $acesso_img_1 ?>)"></div>
                 <h2>
 
@@ -83,7 +83,7 @@ $acesso_url_3 = get_field('url_acesso_3');
                     
                 </h2>
             </a>
-            <a class="acesso" href="<?= $acesso_url_2 ?>">
+            <a class="acesso" href="<?= $acesso_url_2 ?>" aria-label="Acesso a categoria jardim e mangueiras">
                 <div class="capa" style="background-image: url(<?= $acesso_img_2 ?>)"></div>
                 <h2>
                     
@@ -94,7 +94,7 @@ $acesso_url_3 = get_field('url_acesso_3');
             
                 </h2>
             </a>
-            <a class="acesso" href="<?= $acesso_url_3 ?>">
+            <a class="acesso" href="<?= $acesso_url_3 ?>" aria-label="Acesso a categoria ferramentas">
                 <div class="capa" style="background-image: url(<?= $acesso_img_3 ?>)"></div>
                 <h2>
 
@@ -133,7 +133,7 @@ $acesso_url_3 = get_field('url_acesso_3');
 
                 <li>
                     <a class="produto" href="<?php the_permalink(); ?>">
-                        <img class="thumbnail" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?= bloginfo() . '-' . the_title(); ?>">
+                        <img loading="lazy" class="thumbnail" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?= bloginfo() . '-' . the_title(); ?>">
                         <h3><?php the_title(); ?></h3>
                     </a>
                 </li>

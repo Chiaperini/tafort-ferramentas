@@ -47,13 +47,13 @@ if (isset($_GET['s']) && !empty($_GET['s'])) {
 
         <ul class="redes-sociais">
 
-            <li class="icone"> <a href="" alt="logo facebook"><i class="fa fa-facebook"></i></a> </li>
+            <li class="icone"> <a href="" alt="logo facebook" aria-label="Encaminha para o facebook"><i class="fa fa-facebook"></i></a> </li>
 
-            <li class="icone"> <a href="" alt="logo instagram"><i class="fa fa-instagram"></i></a> </li>
+            <li class="icone"> <a href="" alt="logo instagram" aria-label="Encaminha para o instagram"><i class="fa fa-instagram"></i></a> </li>
 
-            <li class="icone"> <a href="" alt="logo youtube"><i class="fa-brands fa-youtube"></i></a> </li>
+            <li class="icone"> <a href="" alt="logo youtube" aria-label="Encaminha para o youtube"><i class="fa-brands fa-youtube"></i></a> </li>
 
-            <li class="icone"> <a href="" alt="logo linkedin"><i class="fa fa-linkedin"></i></a> </li>
+            <li class="icone"> <a href="" alt="logo linkedin" aria-label="Encaminha para o linkedin"><i class="fa fa-linkedin"></i></a> </li>
 
         </ul>
 
@@ -103,7 +103,7 @@ if (isset($_GET['s']) && !empty($_GET['s'])) {
 
                     <input type="text" placeholder="Pesquisar" name="s" value="<?= $pesquisa ?>">
 
-                    <button type="submit">
+                    <button type="submit" aria-label="Pesquisar">
                         <i class="fa fa-search"></i>
                     </button>
 
