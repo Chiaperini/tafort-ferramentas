@@ -1,10 +1,10 @@
 <?php
 
 // Remove o srcset
-//add_filter('wp_calculate_image_srcset', '__return_false');
-//add_filter('wp_calculate_image_sizes', '__return_false');
-//add_filter('wp_calculate_image_srcset_meta', '__return_null');
-//add_filter('wp_lazy_loading_enabled', '__return_true');
+add_filter('wp_calculate_image_srcset', '__return_false');
+add_filter('wp_calculate_image_sizes', '__return_false');
+add_filter('wp_calculate_image_srcset_meta', '__return_null');
+add_filter('wp_lazy_loading_enabled', '__return_true');
 
 function mytheme_add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );

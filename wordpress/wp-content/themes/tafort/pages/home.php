@@ -7,6 +7,10 @@ $banner_img_1 = get_field('banner_img_1');
 $banner_img_2 = get_field('banner_img_2');
 $banner_img_3 = get_field('banner_img_3');
 
+$banner_mobile_1 = get_field('banner_mobile_1');
+$banner_mobile_2 = get_field('banner_mobile_2');
+$banner_mobile_3 = get_field('banner_mobile_3');
+
 $acesso_img_1 = get_field('acesso_img_1');
 $acesso_img_2 = get_field('acesso_img_2');
 $acesso_img_3 = get_field('acesso_img_3');
@@ -38,31 +42,58 @@ $acesso_url_3 = get_field('url_acesso_3');
         </div>
     </div>
 
-    <div class="banner">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="banner banner-pc">
+        <div id="PCcarouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#PCcarouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#PCcarouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#PCcarouselExampleIndicators" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img loading="lazy" class="d-block w-100" src="<?= $banner_img_1 ?>" alt="<?= bloginfo() . '-' . the_title(); ?>">
+                    <img loading="lazy" class="d-block w-100" src="<?= $banner_img_1 ?>" alt="<?= bloginfo() . '-' . the_title(); ?>"   title="<?= the_title(); ?>">
                 </div>
                 <div class="carousel-item">
-                    <img loading="lazy" class="d-block w-100" src="<?= $banner_img_2 ?>" alt="<?= bloginfo() . '-' . the_title(); ?>">
+                    <img loading="lazy" class="d-block w-100" src="<?= $banner_img_2 ?>" alt="<?= bloginfo() . '-' . the_title(); ?>"   title="<?= the_title(); ?>">
                 </div>
                 <div class="carousel-item">
-                    <img loading="lazy" class="d-block w-100" src="<?= $banner_img_3 ?>" alt="<?= bloginfo() . '-' . the_title(); ?>">
+                    <img loading="lazy" class="d-block w-100" src="<?= $banner_img_3 ?>" alt="<?= bloginfo() . '-' . the_title(); ?>"   title="<?= the_title(); ?>">
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#PCcarouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
+
             </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#PCcarouselExampleIndicators" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
+
+            </a>
+        </div>
+    </div>
+
+    <div class="banner banner-mobile">
+        <div id="MOBcarouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#MOBcarouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#MOBcarouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#MOBcarouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img loading="lazy" class="d-block w-100" src="<?= $banner_mobile_1 ?>" alt="<?= bloginfo() . '-' . the_title(); ?>"   title="<?= the_title(); ?>">
+                </div>
+                <div class="carousel-item">
+                    <img loading="lazy" class="d-block w-100" src="<?= $banner_mobile_2 ?>" alt="<?= bloginfo() . '-' . the_title(); ?>"   title="<?= the_title(); ?>">
+                </div>
+                <div class="carousel-item">
+                    <img loading="lazy" class="d-block w-100" src="<?= $banner_mobile_3 ?>" alt="<?= bloginfo() . '-' . the_title(); ?>"   title="<?= the_title(); ?>">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#MOBcarouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#MOBcarouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
             </a>
         </div>
     </div>
@@ -133,7 +164,7 @@ $acesso_url_3 = get_field('url_acesso_3');
 
                 <li>
                     <a class="produto" href="<?php the_permalink(); ?>">
-                        <img loading="lazy" class="thumbnail" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?= bloginfo() . '-' . the_title(); ?>">
+                        <img loading="lazy" class="thumbnail" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?= bloginfo() . '-' . the_title(); ?>"   title="<?= the_title(); ?>">
                         <h3><?php the_title(); ?></h3>
                     </a>
                 </li>

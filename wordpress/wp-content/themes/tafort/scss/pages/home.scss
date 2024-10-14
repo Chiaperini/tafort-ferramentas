@@ -124,6 +124,10 @@
     }
   }
 
+  .banner-pc{ display: flex;}
+  
+  .banner-mobile{ display: none;}
+
   .acesso-rapido{
 
     display: flex;
@@ -375,7 +379,11 @@
   
       }
     }
+    
+    .banner-pc{ display: none;}
   
+    .banner-mobile{ display: flex;}
+
     .acesso-rapido{
   
       display: flex;

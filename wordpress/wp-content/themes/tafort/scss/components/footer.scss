@@ -46,6 +46,23 @@ footer{
         }
       }
 
+      .navbar-collapse{
+
+        display: flex;
+
+        ul{
+
+          display: flex;
+
+          li{
+
+            display: flex;
+            align-self: center;
+          }
+        }
+
+      }
+
       .redes-sociais{
 
         display: flex;
@@ -56,10 +73,11 @@ footer{
 
           transition: .3s;
 
-          img{
-
-            width: 20px;
-            height: 20px;
+          i{
+    
+            font-size: $fs18;
+            color: $branco;
+    
           }
 
           &:hover{
@@ -82,10 +100,11 @@ footer{
           transition: .3s;
           gap: 20px;
 
-          img{
-
-            width: 20px;
-            height: 20px;
+          i{
+    
+            font-size: $fs18;
+            color: $branco;
+    
           }
 
           p{

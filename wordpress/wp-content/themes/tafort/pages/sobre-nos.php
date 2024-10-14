@@ -15,7 +15,7 @@ $img_sobre_1 = get_field('img_sobre_1');
             <p>A Tafort está presente no mercado de ferramentas visando sempre garantir a satisfação do cliente.</p>
         </div>
 
-        <img loading="lazy" src="<?= $img_sobre_1 ?>" alt="<?= bloginfo() . '-' . the_title(); ?>">
+        <img loading="lazy" src="<?= $img_sobre_1 ?>" alt="<?= bloginfo() . '-' . the_title(); ?>"   title="<?= the_title(); ?>">
         
         <div class="textos">
             <div class="conteudo">
