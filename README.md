@@ -58,7 +58,7 @@
 - Crie variáveis de foma que fique com os nomes iguais aos das imagens:
 
 **Home**
-<img src="https://github.com/user-attachments/assets/276a5e36-a186-4a64-8dc1-e4842b188388" alt="ACF home">
+<img src="https://github.com/Chiaperini/tafort-ferramentas/issues/4#issue-2586502631" alt="ACF home">
 
 
 
